@@ -1,0 +1,13 @@
+{
+  "name": "node-whois",
+  "version": "0.0.1",
+  "description": "A simple WHOIS client for NodeJS",
+  "keywords": [
+    "whois"
+  ],
+  "bugs": "http://github.com/hjr265/node-whois/issues",
+  "license": "FreeBSD",
+  "author": "Mahmud Ridwan <habib.jr265@gmail.com>",
+  "main": "index.js",
+  "repository": "git://github.com/hjr265/node-whois"
+}
