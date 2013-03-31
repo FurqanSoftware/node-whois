@@ -11,7 +11,7 @@
   "main": "index.js",
   "repository": "git://github.com/hjr265/node-whois",
   "scripts": {
-    "test": "mocha -u bdd -R spec -t 5000"
+    "test": "mocha -u bdd -R spec -t 10000"
   },  
   "devDependencies": {
     "mocha": "~1.8.2"

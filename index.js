@@ -10,14 +10,30 @@ function lookup(addr, options, done) {
     options = undefined
   }
 
+  var addrKind
+  if(net.isIP(addr)) {
+    addrKind = 'IP'
+  } else {
+    addrKind = 'DOMAIN'
+  }
+
   options = options || {}
 
-  var parts = addr.split('.')
-    , tld = parts[parts.length - 1]
-
   options.server = options.server || {}
-  var host = options.server.host || SERVERS[tld]
+  var host = options.server.host
     , port = options.server.port || 43
+
+  var follow = options.follow || 0
+
+  var timeout = options.timeout || 10000
+
+  if(addrKind == 'IP') {
+    host = host || 'whois.arin.net'
+  } else {
+    var parts = addr.split('.')
+      , tld = parts[parts.length - 1]
+    host = host || SERVERS[tld]
+  }
 
   if(!host) {
     var err = new Error('lookup: unknown tld')
@@ -26,10 +42,8 @@ function lookup(addr, options, done) {
     return
   }
 
-  var timeout = options.timeout || 10000
-
   var command = ''
-  if(!options.server.host) {
+  if(!options.server.host && addrKind != 'IP') {
     command += 'domain '
   }
   command += addr + '\r\n'
@@ -58,13 +72,12 @@ function lookup(addr, options, done) {
       return
     }
 
-    var follow = options.follow || 0
     if(follow > 0) {
-      var match = data.match(/(Registrar Whois|Whois Server):\s*(.+)/)
+      var match = data.match(/(ReferralServer|Registrar Whois|Whois Server):\s*(whois:\/\/)?(.+)/)
       if(match) {
         lookup(addr, {
           server: {
-            host: match[2]
+            host: match[3]
           },
           timeout: timeout,
           follow: follow - 1

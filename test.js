@@ -10,6 +10,14 @@ describe('lookup', function() {
     })
   })
 
+  it('should work with 50.116.8.109', function(done) {
+    whois.lookup('50.116.8.109', function(err, data) {
+      assert(!err)
+      assert.notEqual(data.indexOf('OrgName:        Linode'), -1)
+      done()
+    })
+  })
+
   it('should honor user specified server', function(done) {
     whois.lookup('google.com', {
       server: {
@@ -17,7 +25,8 @@ describe('lookup', function() {
       }
     }, function(err, data) {
       assert(!err)
-      assert.notEqual(data.indexOf('dns-admin@google.com +1.6502530000 Fax: +1.6506188571'), -1)
+      assert.notEqual(data.indexOf('Dns Admin'), -1)
+      assert.notEqual(data.indexOf('Google Inc.'), -1)
       done()
     })
   })
@@ -27,7 +36,8 @@ describe('lookup', function() {
       follow: 1
     }, function(err, data) {
       assert(!err)
-      assert.notEqual(data.indexOf('dns-admin@google.com +1.6502530000 Fax: +1.6506188571'), -1)
+      assert.notEqual(data.indexOf('Dns Admin'), -1)
+      assert.notEqual(data.indexOf('Google Inc.'), -1)
       done()
     })
   })
