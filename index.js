@@ -75,9 +75,11 @@ function lookup(addr, options, done) {
     if(follow > 0) {
       var match = data.match(/(ReferralServer|Registrar Whois|Whois Server):\s*(whois:\/\/)?(.+)/)
       if(match) {
+        var parts = match[3].split(':')
         lookup(addr, {
           server: {
-            host: match[3]
+            host: parts[0],
+            port: parts[1]
           },
           timeout: timeout,
           follow: follow - 1

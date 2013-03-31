@@ -41,4 +41,14 @@ describe('lookup', function() {
       done()
     })
   })
+
+  it('should follow redirects', function(done) {
+    whois.lookup('176.58.115.202', {
+      follow: 1
+    }, function(err, data) {
+      assert(!err)
+      assert.notEqual(data.indexOf('netname:        LINODE-UK'), -1)
+      done()
+    })
+  })
 })
