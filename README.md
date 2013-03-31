@@ -32,10 +32,6 @@ A simple WHOIS client for NodeJS.
       console.log(err, data)
     })
 
-## TODO
-
-* Write tests
-
 ## License
 
 FreeBSD
