@@ -17,8 +17,10 @@ exports.lookup = function(addr, options, done) {
   var host = options.server.host || SERVERS[tld]
     , port = options.server.port || 43
 
-  if(!tld) {
-    done(new Error('unknown tld'))
+  if(!host) {
+    var err = new Error('lookup: unknown tld')
+    err.code = 'ENOTFOUND'
+    done(err)
     return
   }
 
@@ -41,9 +43,10 @@ exports.lookup = function(addr, options, done) {
     data += chunk
   })
   client.on('timeout', function() {
+    var err = new Error('lookup: timeout')
+    err.code = 'TIMEOUT'
+    done(err)
     client.destroy()
-    done(new Error('lookup: timeout'))
-    done = function() {}
   })
   client.on('error', function(err) {
     done(err)
