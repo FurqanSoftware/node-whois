@@ -2,7 +2,9 @@ var net = require('net')
 
 var SERVERS = require('./servers.json')
 
-exports.lookup = function(addr, options, done) {
+exports.lookup = lookup
+
+function lookup(addr, options, done) {
   if(typeof done == 'undefined') {
     done = options
     options = undefined
@@ -55,6 +57,22 @@ exports.lookup = function(addr, options, done) {
     if(hadErr) {
       return
     }
+
+    var follow = options.follow || 0
+    if(follow > 0) {
+      var match = data.match(/(Registrar Whois|Whois Server):\s*(.+)/)
+      if(match) {
+        lookup(addr, {
+          server: {
+            host: match[2]
+          },
+          timeout: timeout,
+          follow: follow - 1
+        }, done)
+      }
+      return
+    }
+
     done(null, data)
   })
 }
