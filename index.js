@@ -84,8 +84,8 @@ function lookup(addr, options, done) {
           timeout: timeout,
           follow: follow - 1
         }, done)
+        return
       }
-      return
     }
 
     done(null, data)
