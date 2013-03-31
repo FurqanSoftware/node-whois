@@ -1,4 +1,5 @@
 .git*
 sync.py
+test.js
 
 *.sublime-*

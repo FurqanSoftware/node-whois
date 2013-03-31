@@ -9,5 +9,11 @@
   "license": "FreeBSD",
   "author": "Mahmud Ridwan <habib.jr265@gmail.com>",
   "main": "index.js",
-  "repository": "git://github.com/hjr265/node-whois"
+  "repository": "git://github.com/hjr265/node-whois",
+  "scripts": {
+    "test": "mocha -u bdd -R spec -t 5000"
+  },  
+  "devDependencies": {
+    "mocha": "~1.8.2"
+  }
 }
