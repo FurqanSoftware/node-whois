@@ -55,20 +55,22 @@ function lookup(addr, options, done) {
   client.setEncoding('ascii')
 
   var data = ''
+    , timedout = false
   client.on('data', function(chunk) {
     data += chunk
   })
   client.on('timeout', function() {
+    timedout = true
+    client.destroy()
     var err = new Error('lookup: timeout')
     err.code = 'TIMEOUT'
     done(err)
-    client.destroy()
   })
   client.on('error', function(err) {
     done(err)
   })
   client.on('close', function(hadErr) {
-    if(hadErr) {
+    if(hadErr || timedout) {
       return
     }
 
