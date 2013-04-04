@@ -31,7 +31,7 @@ describe('lookup', function() {
     })
   })
 
-  it('should follow redirects', function(done) {
+  it('should follow redirects for domain names', function(done) {
     whois.lookup('google.com', {
       follow: 1
     }, function(err, data) {
@@ -42,12 +42,20 @@ describe('lookup', function() {
     })
   })
 
-  it('should follow redirects', function(done) {
+  it('should follow redirects for IPs', function(done) {
     whois.lookup('176.58.115.202', {
       follow: 1
     }, function(err, data) {
       assert(!err)
       assert.notEqual(data.indexOf('netname:        LINODE-UK'), -1)
+      done()
+    })
+  })
+
+  it('should work with efi.sh', function(done) {
+    whois.lookup('efi.sh', function(err, data) {
+      assert(!err)
+      assert.notEqual(data.indexOf('Domain "EFI.SH" - Not available'), -1)
       done()
     })
   })

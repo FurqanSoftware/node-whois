@@ -27,12 +27,27 @@ function lookup(addr, options, done) {
 
   var timeout = options.timeout || 10000
 
+  var command = ''
+  if(!options.server.host && addrKind != 'IP') {
+    command += 'domain '
+  }
+  command += addr + '\r\n'
+
   if(addrKind == 'IP') {
     host = host || 'whois.arin.net'
   } else {
     var parts = addr.split('.')
       , tld = parts[parts.length - 1]
-    host = host || SERVERS[tld]
+    var server = SERVERS[tld] || {}
+    if(typeof server == 'string') {
+      server = {
+        host: server
+      }
+    }
+    if(server.command) {
+      command = server.command.replace('$ADDR', addr) + '\r\n'
+    }
+    host = host || server.host
   }
 
   if(!host) {
@@ -41,12 +56,6 @@ function lookup(addr, options, done) {
     done(err)
     return
   }
-
-  var command = ''
-  if(!options.server.host && addrKind != 'IP') {
-    command += 'domain '
-  }
-  command += addr + '\r\n'
 
   var client = net.connect(port, host, function() {
     client.write(command, 'ascii')

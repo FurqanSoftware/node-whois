@@ -180,7 +180,10 @@
   "ph": null, 
   "fr": "whois.nic.fr", 
   "fo": "whois.nic.fo", 
-  "sh": "whois.nic.sh", 
+  "sh": {
+    "host": "whois.nic.sh",
+    "command": "$ADDR"
+  }, 
   "fm": null, 
   "fk": null, 
   "fj": null, 
