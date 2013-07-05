@@ -181,8 +181,12 @@
   "fr": "whois.nic.fr", 
   "fo": "whois.nic.fo", 
   "sh": {
-    "host": "whois.nic.sh",
-    "command": "$ADDR"
+    "method": "post",
+    "host": "www.nic.sh",
+    "path": "/cgi-bin/whois",
+    "payload": "query=$ADDR",
+    "selector": "#mainbody tr td[valign=top] table[width='100%']",
+    "parser": "table"
   }, 
   "fm": null, 
   "fk": null, 
