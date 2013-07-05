@@ -76,7 +76,7 @@ describe('lookup', function() {
     })
   })
 
-  it.only('should work with nic.tm', function(done) {
+  it('should work with nic.tm', function(done) {
     whois.lookup('nic.tm', function(err, data) {
       assert(!err)
       assert.notEqual(data.indexOf('Domain Name : nic.tm'), -1)
