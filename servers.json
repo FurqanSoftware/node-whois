@@ -269,7 +269,14 @@
   "pg": null, 
   "iq": "whois.cmc.iq", 
   "in": "whois.inregistry.net", 
-  "io": "whois.nic.io", 
+  "io": {
+    "method": "post",
+    "host": "www.nic.io",
+    "path": "/cgi-bin/whois",
+    "payload": "query=$ADDR",
+    "selector": "#mainbodyalt #bodyfill table",
+    "parser": "table"
+  }, 
   "il": "whois.isoc.org.il", 
   "im": "whois.nic.im", 
   "ar": null, 

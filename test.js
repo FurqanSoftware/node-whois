@@ -59,4 +59,12 @@ describe('lookup', function() {
       done()
     })
   })
+
+  it('should work with nic.io', function(done) {
+    whois.lookup('nic.io', function(err, data) {
+      assert(!err)
+      assert.notEqual(data.indexOf('Domain Name : nic.io'), -1)
+      done()
+    })
+  })
 })
