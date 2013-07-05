@@ -262,7 +262,14 @@
   "ad": null, 
   "ae": "whois.aeda.net.ae", 
   "pm": "whois.nic.pm", 
-  "ac": "whois.nic.ac", 
+  "ac": {
+    "method": "get",
+    "host": "www.nic.ac",
+    "path": "/cgi-bin/whois?query=$ADDR",
+    "payload": "",
+    "selector": "#mainbody #bodyfill table",
+    "parser": "table"
+  }, 
   "pn": null, 
   "an": null, 
   "ao": null, 
