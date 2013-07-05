@@ -52,10 +52,10 @@ describe('lookup', function() {
     })
   })
 
-  it('should work with efi.sh', function(done) {
-    whois.lookup('efi.sh', function(err, data) {
+  it('should work with nic.sh', function(done) {
+    whois.lookup('nic.sh', function(err, data) {
       assert(!err)
-      assert.notEqual(data.indexOf('Domain "EFI.SH" - Not available'), -1)
+      assert.notEqual(data.indexOf('Domain Name : nic.sh'), -1)
       done()
     })
   })
