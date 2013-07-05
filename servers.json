@@ -119,7 +119,14 @@
   "mo": "whois.monic.mo", 
   "ml": null, 
   "mm": null, 
-  "tm": "whois.nic.tm", 
+  "tm": {
+    "method": "post",
+    "host": "www.nic.tm",
+    "path": "/cgi-bin/whois",
+    "payload": "query=$ADDR",
+    "selector": "#mainbody #bodyfill table",
+    "parser": "table"
+  }, 
   "mc": null, 
   "to": "whois.tonic.to", 
   "ma": "whois.iam.net.ma", 
