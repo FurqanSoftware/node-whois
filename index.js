@@ -96,7 +96,10 @@ function lookup(addr, options, done) {
   var host = options.server.host
     , port = options.server.port || 43
 
-  var follow = options.follow || 0
+  var follow = 2
+  if(typeof options.follow != 'undefined') {
+    follow = options.follow
+  }
 
   var timeout = options.timeout || 10000
 
