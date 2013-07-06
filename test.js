@@ -5,7 +5,8 @@ describe('lookup', function() {
   it('should work with google.com', function(done) {
     whois.lookup('google.com', function(err, data) {
       assert(!err)
-      assert.notEqual(data.indexOf('Registrar: MARKMONITOR INC.'), -1)
+      assert.notEqual(data.indexOf('Dns Admin'), -1)
+      assert.notEqual(data.indexOf('Google Inc.'), -1)
       done()
     })
   })
