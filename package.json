@@ -1,6 +1,6 @@
 {
   "name": "node-whois",
-  "version": "0.0.5",
+  "version": "0.2.0",
   "description": "A simple WHOIS client for NodeJS",
   "keywords": [
     "whois"
@@ -12,8 +12,11 @@
   "repository": "git://github.com/hjr265/node-whois",
   "scripts": {
     "test": "mocha -u bdd -R spec -t 10000"
-  },  
+  },
   "devDependencies": {
     "mocha": "~1.8.2"
+  },
+  "dependencies": {
+    "jsdom": "~0.7.0"
   }
 }

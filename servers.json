@@ -119,7 +119,14 @@
   "mo": "whois.monic.mo", 
   "ml": null, 
   "mm": null, 
-  "tm": "whois.nic.tm", 
+  "tm": {
+    "method": "post",
+    "host": "www.nic.tm",
+    "path": "/cgi-bin/whois",
+    "payload": "query=$ADDR",
+    "selector": "#mainbody #bodyfill table",
+    "parser": "table"
+  }, 
   "mc": null, 
   "to": "whois.tonic.to", 
   "ma": "whois.iam.net.ma", 
@@ -181,8 +188,12 @@
   "fr": "whois.nic.fr", 
   "fo": "whois.nic.fo", 
   "sh": {
-    "host": "whois.nic.sh",
-    "command": "$ADDR"
+    "method": "post",
+    "host": "www.nic.sh",
+    "path": "/cgi-bin/whois",
+    "payload": "query=$ADDR",
+    "selector": "#mainbody tr td[valign=top] table[width='100%']",
+    "parser": "table"
   }, 
   "fm": null, 
   "fk": null, 
@@ -258,7 +269,14 @@
   "ad": null, 
   "ae": "whois.aeda.net.ae", 
   "pm": "whois.nic.pm", 
-  "ac": "whois.nic.ac", 
+  "ac": {
+    "method": "get",
+    "host": "www.nic.ac",
+    "path": "/cgi-bin/whois?query=$ADDR",
+    "payload": "",
+    "selector": "#mainbody #bodyfill table",
+    "parser": "table"
+  }, 
   "pn": null, 
   "an": null, 
   "ao": null, 
@@ -269,7 +287,14 @@
   "pg": null, 
   "iq": "whois.cmc.iq", 
   "in": "whois.inregistry.net", 
-  "io": "whois.nic.io", 
+  "io": {
+    "method": "post",
+    "host": "www.nic.io",
+    "path": "/cgi-bin/whois",
+    "payload": "query=$ADDR",
+    "selector": "#mainbodyalt #bodyfill table",
+    "parser": "table"
+  }, 
   "il": "whois.isoc.org.il", 
   "im": "whois.nic.im", 
   "ar": null, 

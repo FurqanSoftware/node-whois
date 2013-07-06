@@ -5,7 +5,8 @@ describe('lookup', function() {
   it('should work with google.com', function(done) {
     whois.lookup('google.com', function(err, data) {
       assert(!err)
-      assert.notEqual(data.indexOf('Registrar: MARKMONITOR INC.'), -1)
+      assert.notEqual(data.indexOf('Dns Admin'), -1)
+      assert.notEqual(data.indexOf('Google Inc.'), -1)
       done()
     })
   })
@@ -52,10 +53,45 @@ describe('lookup', function() {
     })
   })
 
-  it('should work with efi.sh', function(done) {
-    whois.lookup('efi.sh', function(err, data) {
+  it('should work with nic.sh', function(done) {
+    whois.lookup('nic.sh', function(err, data) {
       assert(!err)
-      assert.notEqual(data.indexOf('Domain "EFI.SH" - Not available'), -1)
+      assert.notEqual(data.indexOf('Domain Name : nic.sh'), -1)
+      done()
+    })
+  })
+
+  it('should work with nic.io', function(done) {
+    whois.lookup('nic.io', function(err, data) {
+      assert(!err)
+      assert.notEqual(data.indexOf('Domain Name : nic.io'), -1)
+      done()
+    })
+  })
+
+  it('should work with nic.ac', function(done) {
+    whois.lookup('nic.ac', function(err, data) {
+      assert(!err)
+      assert.notEqual(data.indexOf('Domain Name : nic.ac'), -1)
+      done()
+    })
+  })
+
+  it('should work with nic.tm', function(done) {
+    whois.lookup('nic.tm', function(err, data) {
+      assert(!err)
+      assert.notEqual(data.indexOf('Domain Name : nic.tm'), -1)
+      done()
+    })
+  })
+
+  it('should work with redundant follow', function(done) {
+    whois.lookup('google.com', {
+      follow: 5
+    }, function(err, data) {
+      assert(!err)
+      assert.notEqual(data.indexOf('Dns Admin'), -1)
+      assert.notEqual(data.indexOf('Google Inc.'), -1)
       done()
     })
   })
