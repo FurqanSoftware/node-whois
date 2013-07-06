@@ -83,4 +83,15 @@ describe('lookup', function() {
       done()
     })
   })
+
+  it('should work with redundant follow', function(done) {
+    whois.lookup('google.com', {
+      follow: 5
+    }, function(err, data) {
+      assert(!err)
+      assert.notEqual(data.indexOf('Dns Admin'), -1)
+      assert.notEqual(data.indexOf('Google Inc.'), -1)
+      done()
+    })
+  })
 })
