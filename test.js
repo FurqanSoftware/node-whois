@@ -85,6 +85,14 @@ describe('lookup', function() {
     })
   })
 
+  it('should work with srs.net.nz', function(done) {
+    whois.lookup('srs.net.nz', function(err, data) {
+      assert(!err)
+      assert.notEqual(data.indexOf('domain_name: srs.net.nz'), -1)
+      done()
+    })
+  })
+
   it('should work with redundant follow', function(done) {
     whois.lookup('google.com', {
       follow: 5

@@ -89,7 +89,10 @@
   "nr": null, 
   "ki": "whois.nic.ki", 
   "uk": "whois.nic.uk", 
-  "nz": "whois.srs.net.nz", 
+  "nz": {
+    "host": "whois.srs.net.nz",
+    "command": "$ADDR"
+  },
   "tj": null, 
   "ng": "whois.nic.net.ng", 
   "nf": "whois.nic.net.nf", 
