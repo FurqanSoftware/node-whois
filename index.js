@@ -131,10 +131,10 @@ function lookup(addr, options, done) {
   }
 
   var client = net.connect(port, host, function() {
-    client.write(command, 'ascii')
+    client.write(command)
   })
   client.setTimeout(timeout)
-  client.setEncoding('ascii')
+  client.setEncoding('utf-8')
 
   var data = ''
     , timedout = false
