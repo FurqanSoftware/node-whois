@@ -56,7 +56,7 @@ describe('lookup', function() {
   it('should work with nic.sh', function(done) {
     whois.lookup('nic.sh', function(err, data) {
       assert(!err)
-      assert.notEqual(data.indexOf('Domain Name : nic.sh'), -1)
+      assert.notEqual(data.indexOf('Domain : nic.sh'), -1)
       done()
     })
   })
@@ -64,7 +64,7 @@ describe('lookup', function() {
   it('should work with nic.io', function(done) {
     whois.lookup('nic.io', function(err, data) {
       assert(!err)
-      assert.notEqual(data.indexOf('Domain Name : nic.io'), -1)
+      assert.notEqual(data.indexOf('Domain : nic.io'), -1)
       done()
     })
   })
@@ -72,7 +72,7 @@ describe('lookup', function() {
   it('should work with nic.ac', function(done) {
     whois.lookup('nic.ac', function(err, data) {
       assert(!err)
-      assert.notEqual(data.indexOf('Domain Name : nic.ac'), -1)
+      assert.notEqual(data.indexOf('Domain : nic.ac'), -1)
       done()
     })
   })
@@ -80,7 +80,7 @@ describe('lookup', function() {
   it('should work with nic.tm', function(done) {
     whois.lookup('nic.tm', function(err, data) {
       assert(!err)
-      assert.notEqual(data.indexOf('Domain Name : nic.tm'), -1)
+      assert.notEqual(data.indexOf('Domain : nic.tm'), -1)
       done()
     })
   })
