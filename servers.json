@@ -7,7 +7,10 @@
   "um": null, 
   "sr": null, 
   "ss": null, 
-  "li": "whois.nic.li", 
+  "li": {
+    "host": "whois.nic.li",
+    "command": "$ADDR"
+  },
   "su": "whois.tcinet.ru", 
   "lk": null, 
   "us": "whois.nic.us", 
