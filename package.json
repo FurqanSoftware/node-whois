@@ -1,0 +1,31 @@
+{
+  "name": "node-whois",
+  "version": "2.0.0",
+  "description": "A WHOIS client for NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "coffee -c index.coffee",
+    "pretest": "coffee -c index.coffee",
+    "test": "mocha -u bdd -R spec -t 10000 -s 5000 --compilers coffee:coffee-script test.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hjr265/node-whois"
+  },
+  "keywords": [
+    "whois"
+  ],
+  "author": "Mahmud Ridwan <m@hjr265.me>",
+  "license": "FreeBSD",
+  "bugs": {
+    "url": "https://github.com/hjr265/node-whois/issues"
+  },
+  "homepage": "https://github.com/hjr265/node-whois",
+  "devDependencies": {
+    "coffee-script": "~1.6.3",
+    "mocha": "~1.16.2"
+  },
+  "dependencies": {
+    "underscore": "~1.5.2"
+  }
+}
