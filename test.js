@@ -85,6 +85,15 @@ describe('lookup', function() {
     })
   })
 
+  it('should work with nic.is', function(done) {
+    whois.lookup('nic.is', function(err, data) {
+      assert(!err)
+      assert.equal(data.indexOf('No entries found'), -1)
+      assert.notEqual(data.indexOf('created:      September  5 2000'), -1)
+      done()
+    })
+  })
+
   it('should work with srs.net.nz', function(done) {
     whois.lookup('srs.net.nz', function(err, data) {
       assert(!err)
