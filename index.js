@@ -1,6 +1,7 @@
 var http = require('http')
   , jsdom = require('jsdom')
   , net = require('net')
+  , punycode = require('punycode')
 
 var SERVERS = require('./servers.json')
 
@@ -107,7 +108,7 @@ function lookup(addr, options, done) {
   if(!options.server.host && addrKind != 'IP') {
     command += 'domain '
   }
-  command += addr + '\r\n'
+  command += punycode.toASCII(addr) + '\r\n'
 
   if(addrKind == 'IP') {
     host = host || 'whois.arin.net'
