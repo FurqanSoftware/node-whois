@@ -339,7 +339,10 @@
   },
   "iq": "whois.cmc.iq",
   "ir": "whois.nic.ir",
-  "is": "whois.isnic.is",
+  "is": {
+    "host": "whois.isnic.is",
+    "command": "$ADDR"
+  },
   "it": "whois.nic.it",
   "je": "whois.je",
   "jm": null,
