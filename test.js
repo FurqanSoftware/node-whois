@@ -103,4 +103,12 @@ describe('lookup', function() {
       done()
     })
   })
+
+  it('should work with кто.рф', function(done) {
+    whois.lookup('кто.рф', function(err, data) {
+      assert(!err)
+      assert.notEqual(data.indexOf('XN--J1AIL.XN--P1AI'), -1)
+      done()
+    })
+  })
 })
