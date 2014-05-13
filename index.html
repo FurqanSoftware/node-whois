@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Node-whois : A simple WHOIS client for NodeJS" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Node-whois</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/hjr265/node-whois">View on GitHub</a>
+
+          <h1 id="project_title">Node-whois</h1>
+          <h2 id="project_tagline">A simple WHOIS client for NodeJS</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/hjr265/node-whois/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/hjr265/node-whois/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="node-whois" class="anchor" href="#node-whois"><span class="octicon octicon-link"></span></a>Node WHOIS</h1>
+
+<p>A simple WHOIS client for NodeJS.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>$ npm install node-whois
+</code></pre>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<pre><code>var whois = require('node-whois')
+
+whois.lookup(addr, [options], done)
+</code></pre>
+
+<ul>
+<li><p><code>addr</code> is the address to be looked up</p></li>
+<li>
+<p><code>options</code></p>
+
+<ul>
+<li><p><code>server</code> is a hash with <code>host</code> and <code>port</code> of the WHOIS server</p></li>
+<li><p><code>follow</code> is the number of times redirection will be honored</p></li>
+<li><p><code>timeout</code> is the number of milliseconds after which the connection will timeout</p></li>
+</ul>
+</li>
+</ul><h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<h3>
+<a name="basic" class="anchor" href="#basic"><span class="octicon octicon-link"></span></a>Basic</h3>
+
+<pre><code>whois.lookup('google.com', function(err, data) {
+  console.log(err, data)
+})
+</code></pre>
+
+<h3>
+<a name="advanced" class="anchor" href="#advanced"><span class="octicon octicon-link"></span></a>Advanced</h3>
+
+<pre><code>whois.lookup('google.com', {
+  server: {
+    host: 'whois.markmonitor.com'
+  },
+  timeout: 5000
+}, function(err, data) {
+  console.log(err, data)
+})
+</code></pre>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>FreeBSD</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Node-whois maintained by <a href="https://github.com/hjr265">hjr265</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
