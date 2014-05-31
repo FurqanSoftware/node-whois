@@ -70,3 +70,8 @@ SERVERS = require './servers.json'
 				return
 
 		done null, data
+
+
+if module is require.main
+	@lookup process.argv[2], (err, data) =>
+		console.log data
