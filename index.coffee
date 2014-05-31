@@ -51,6 +51,8 @@ SERVERS = require './servers.json'
 
 	socket = net.connect server.port, server.host, =>
 		socket.write server.query.replace '$addr', punycode.toASCII addr
+	if options.timeout?
+		socket.setTimeout options.timeout
 
 	data = ''
 	socket.on 'data', (chunk) =>
