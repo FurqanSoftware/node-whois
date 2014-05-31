@@ -1,6 +1,7 @@
 _ = require 'underscore'
 net = require 'net'
 punycode = require 'punycode'
+util = require 'util'
 
 
 SERVERS = require './servers.json'
@@ -71,7 +72,7 @@ SERVERS = require './servers.json'
 			if match?
 				options = _.extend {}, options,
 					server: match[3]
-				@lookup addr, options, (err, data2) =>
+				@lookup addr, options, (err, parts) =>
 					if err?
 						return done err
 
@@ -79,9 +80,9 @@ SERVERS = require './servers.json'
 						done null, [
 							server: server
 							data: data
-						].concat(data2)
+						].concat(parts)
 					else
-						done null, data2
+						done null, parts
 				return
 
 		if options.verbose
@@ -94,5 +95,41 @@ SERVERS = require './servers.json'
 
 
 if module is require.main
-	@lookup process.argv[2], (err, data) =>
-		console.log data
+	optimist = require('optimist')
+	.usage('$0 [options] address')
+	.default('s', null)
+	.alias('s', 'server')
+	.describe('s', 'whois server')
+	.default('f', 0)
+	.alias('f', 'follow')
+	.describe('f', 'number of times to follow redirects')
+	.boolean('v')
+	.default('v', no)
+	.alias('v', 'verbose')
+	.describe('v', 'show verbose results')
+	.boolean('h')
+	.default('h', no)
+	.alias('h', 'help')
+	.describe('h', 'display this help message')
+
+	if optimist.argv.h
+		console.log optimist.help()
+		process.exit 0
+
+	if not optimist.argv._[0]?
+		console.log optimist.help()
+		process.exit 1
+
+	@lookup optimist.argv._[0], server: optimist.argv.server, follow: optimist.argv.follow, verbose: optimist.argv.verbose, (err, data) =>
+		if err?
+			console.log err
+			process.exit 1
+
+		if util.isArray data
+			for part in data
+				console.log part.server.host
+				console.log part.data
+				console.log
+
+		else
+			console.log data

@@ -26,6 +26,7 @@
     "mocha": "~1.16.2"
   },
   "dependencies": {
+    "optimist": "^0.6.1",
     "underscore": "~1.5.2"
   }
 }
