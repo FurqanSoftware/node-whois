@@ -1,21 +1,151 @@
 {
-  "ac": {
-    "host": "whois.nic.ac",
-    "command": "$ADDR"
+  "br.com": "whois.centralnic.net",
+  "cn.com": "whois.centralnic.net",
+  "de.com": "whois.centralnic.net",
+  "eu.com": "whois.centralnic.net",
+  "gb.com": "whois.centralnic.net",
+  "gb.net": "whois.centralnic.net",
+  "gr.com": "whois.centralnic.net",
+  "hu.com": "whois.centralnic.net",
+  "in.net": "whois.centralnic.net",
+  "jpn.com": "whois.centralnic.net",
+  "no.com": "whois.centralnic.net",
+  "qc.com": "whois.centralnic.net",
+  "ru.com": "whois.centralnic.net",
+  "sa.com": "whois.centralnic.net",
+  "se.com": "whois.centralnic.net",
+  "se.net": "whois.centralnic.net",
+  "uk.com": "whois.centralnic.net",
+  "uk.net": "whois.centralnic.net",
+  "us.com": "whois.centralnic.net",
+  "uy.com": "whois.centralnic.net",
+  "web.com": "whois.centralnic.net",
+  "za.com": "whois.centralnic.net",
+  "com": {
+    "host": "whois.verisign-grs.com",
+    "query": "DOMAIN $addr\r\n"
   },
-  "academy": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
+
+  "za.net": "whois.za.net",
+  "net": "whois.verisign-grs.com",
+
+  "eu.org": "whois.eu.org",
+  "za.org": "whois.za.org",
+  "org": "whois.pir.org",
+
+  "edu": "whois.educause.edu",
+  "gov": "whois.dotgov.gov",
+  "int": "whois.iana.org",
+  "mil": null,
+
+  "e164.arpa": "whois.ripe.net",
+  "in-addr.arpa": "ARPA",
+  "arpa": "whois.iana.org",
+
+  "aero": "whois.aero",
+  "asia": "whois.nic.asia",
+  "biz": "whois.biz",
+  "cat": "whois.cat",
+  "coop": "whois.nic.coop",
+  "info": "whois.afilias.net",
+  "jobs": "jobswhois.verisign-grs.com",
+  "mobi": "whois.dotmobiregistry.net",
+  "museum": "whois.museum",
+  "name": "whois.nic.name",
+  "post": "whois.dotpostregistry.net",
+  "pro": "whois.dotproregistry.net",
+  "tel": "whois.nic.tel",
+  "travel": "whois.nic.travel",
+  "xxx": "whois.nic.xxx",
+
+  "academy": "whois.donuts.co",
+  "bike": "whois.donuts.co",
+  "builders": "whois.donuts.co",
+  "buzz": "whois.nic.buzz",
+  "cab": "whois.donuts.co",
+  "camera": "whois.donuts.co",
+  "camp": "whois.donuts.co",
+  "careers": "whois.donuts.co",
+  "center": "whois.donuts.co",
+  "ceo": "whois.nic.ceo",
+  "clothing": "whois.donuts.co",
+  "codes": "whois.donuts.co",
+  "coffee": "whois.donuts.co",
+  "company": "whois.donuts.co",
+  "computer": "whois.donuts.co",
+  "construction": "whois.donuts.co",
+  "contractors": "whois.donuts.co",
+  "diamonds": "whois.donuts.co",
+  "directory": "whois.donuts.co",
+  "domains": "whois.donuts.co",
+  "education": "whois.donuts.co",
+  "email": "whois.donuts.co",
+  "enterprises": "whois.donuts.co",
+  "equipment": "whois.donuts.co",
+  "estate": "whois.donuts.co",
+  "farm": "whois.donuts.co",
+  "florist": "whois.donuts.co",
+  "gallery": "whois.donuts.co",
+  "glass": "whois.donuts.co",
+  "graphics": "whois.donuts.co",
+  "guru": "whois.donuts.co",
+  "holdings": "whois.donuts.co",
+  "holiday": "whois.donuts.co",
+  "house": "whois.donuts.co",
+  "immobilien": "whois.unitedtld.com",
+  "institute": "whois.donuts.co",
+  "international": "whois.donuts.co",
+  "kaufen": "whois.unitedtld.com",
+  "kitchen": "whois.donuts.co",
+  "kiwi": "whois.dot-kiwi.com",
+  "land": "whois.donuts.co",
+  "lighting": "whois.donuts.co",
+  "limo": "whois.donuts.co",
+  "management": "whois.donuts.co",
+  "menu": "whois.nic.menu",
+  "ninja": "whois.unitedtld.com",
+  "onl": "whois.afilias-srs.net",
+  "photography": "whois.donuts.co",
+  "photos": "whois.donuts.co",
+  "plumbing": "whois.donuts.co",
+  "recipes": "whois.donuts.co",
+  "repair": "whois.donuts.co",
+  "ruhr": "whois.nic.ruhr",
+  "sexy": "whois.uniregistry.net",
+  "shoes": "whois.donuts.co",
+  "singles": "whois.donuts.co",
+  "solar": "whois.donuts.co",
+  "solutions": "whois.donuts.co",
+  "support": "whois.donuts.co",
+  "systems": "whois.donuts.co",
+  "tattoo": "whois.uniregistry.net",
+  "technology": "whois.donuts.co",
+  "tips": "whois.donuts.co",
+  "today": "whois.donuts.co",
+  "training": "whois.donuts.co",
+  "uno": "whois.nic.uno",
+  "ventures": "whois.donuts.co",
+  "viajes": "whois.donuts.co",
+  "voyage": "whois.donuts.co",
+  "wang": "whois.gtld.knet.cn",
+  "wien": "whois.wien.tld-box.at",
+  "xn--3bst00m": "whois.gtld.knet.cn",
+  "xn--3ds443g": "whois.afilias-srs.net",
+  "xn--55qw42g": "whois.conac.cn",
+  "xn--6qq986b3xl": "whois.gtld.knet.cn",
+  "xn--80asehdb": "whois.online.rs.corenic.net",
+  "xn--80aswg": "whois.site.rs.corenic.net",
+  "xn--fiq228c5hs": "whois.afilias-srs.net",
+  "xn--ngbc5azd": "whois.nic.xn--ngbc5azd",
+  "xn--q9jyb4c": "domain-registry-whois.l.google.com",
+  "xn--unup4y": "whois.donuts.co",
+  "xn--zfr164b": "whois.conac.cn",
+
+  "ac": "whois.nic.ac",
   "ad": null,
   "ae": "whois.aeda.net.ae",
-  "aero": "whois.aero",
   "af": "whois.nic.af",
   "ag": "whois.nic.ag",
-  "agency": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "ai": "whois.ai",
   "al": null,
   "am": "whois.amnic.net",
@@ -23,297 +153,98 @@
   "ao": null,
   "aq": null,
   "ar": null,
-  "arpa": "whois.iana.org",
   "as": "whois.nic.as",
-  "asia": "whois.nic.asia",
+  "priv.at": "whois.nic.priv.at",
   "at": "whois.nic.at",
   "au": "whois.audns.net.au",
   "aw": null,
   "ax": "whois.ax",
   "az": null,
   "ba": null,
-  "bargains": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "bb": null,
   "bd": null,
   "be": "whois.dns.be",
-  "berlin": "whois.nic.berlin",
   "bf": null,
   "bg": "whois.register.bg",
   "bh": null,
   "bi": "whois1.nic.bi",
-  "bike": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "biz": "whois.biz",
   "bj": "whois.nic.bj",
   "bl": null,
-  "blue": "whois.afilias.net",
   "bm": null,
   "bn": "whois.bn",
   "bo": "whois.nic.bo",
-  "boutique": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "bq": null,
   "br": "whois.registro.br",
   "bs": null,
   "bt": null,
-  "build": "whois.nic.build",
-  "builders": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "buzz": null,
   "bv": null,
-  "bw": "whois.nic.net.bw",
   "by": "whois.cctld.by",
-  "bz": null,
+  "bw": "whois.nic.net.bw",
+  "bz": "whois.afilias-grs.info",
+  "co.ca": "whois.co.ca",
   "ca": "whois.cira.ca",
-  "cab": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "camera": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "camp": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "cards": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "careers": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "cat": "whois.cat",
-  "catering": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "cc": "ccwhois.verisign-grs.com",
-  "cd": null,
-  "center": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "ceo": null,
+  "cd": "whois.nic.cd",
   "cf": "whois.dot.cf",
   "cg": null,
   "ch": "whois.nic.ch",
-  "cheap": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "ci": "whois.nic.ci",
   "ck": null,
   "cl": "whois.nic.cl",
-  "cleaning": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "clothing": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "club": null,
-  "cm": null,
+  "cm": "whois.netcom.cm",
+  "edu.cn": "whois.edu.cn",
   "cn": "whois.cnnic.cn",
+  "uk.co": "whois.uk.co",
   "co": "whois.nic.co",
-  "codes": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "coffee": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "com": "whois.verisign-grs.com",
-  "community": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "company": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "computer": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "construction": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "contractors": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "cool": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "coop": "whois.nic.coop",
   "cr": null,
-  "cruises": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "cu": null,
   "cv": null,
   "cw": null,
   "cx": "whois.nic.cx",
   "cy": null,
   "cz": "whois.nic.cz",
-  "dance": "whois.unitedtld.com",
-  "dating": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "de": "whois.denic.de",
-  "democrat": "whois.unitedtld.com",
-  "diamonds": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "directory": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "dj": null,
   "dk": "whois.dk-hostmaster.dk",
   "dm": "whois.nic.dm",
   "do": null,
-  "domains": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "dz": "whois.nic.dz",
   "ec": "whois.nic.ec",
-  "edu": "whois.educause.edu",
-  "education": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "ee": "whois.tld.ee",
   "eg": null,
   "eh": null,
-  "email": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "enterprises": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "equipment": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "er": null,
-  "es": "whois.nic.es",
-  "estate": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
+  "es": null,
   "et": null,
   "eu": "whois.eu",
-  "events": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "expert": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "exposed": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "farm": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "fi": "whois.fi",
-  "fj": null,
+  "fj": "whois.usp.ac.fj",
   "fk": null,
-  "flights": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "florist": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "fm": null,
   "fo": "whois.nic.fo",
-  "foundation": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "fr": "whois.nic.fr",
-  "futbol": "whois.unitedtld.com",
-  "ga": null,
-  "gallery": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
+  "ga": "whois.dot.ga",
   "gb": null,
-  "gd": "whois.adamsnames.com",
+  "gd": "whois.nic.gd",
   "ge": null,
   "gf": null,
   "gg": "whois.gg",
   "gh": null,
-  "gi": "whois2.afilias-grs.net",
-  "gift": "whois.uniregistry.net",
+  "gi": "whois.afilias-grs.info",
   "gl": "whois.nic.gl",
-  "glass": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "gm": null,
   "gn": null,
-  "gov": "whois.dotgov.gov",
   "gp": null,
   "gq": null,
   "gr": null,
-  "graphics": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "gs": "whois.nic.gs",
   "gt": null,
   "gu": null,
-  "guitars": "whois.uniregistry.net",
-  "guru": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "gw": null,
   "gy": "whois.registry.gy",
   "hk": "whois.hkirc.hk",
-  "hm": null,
+  "hm": "whois.registry.hm",
   "hn": "whois.nic.hn",
-  "holdings": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "holiday": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "house": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "hr": "whois.dns.hr",
   "ht": "whois.nic.ht",
   "hu": "whois.nic.hu",
@@ -321,45 +252,20 @@
   "ie": "whois.domainregistry.ie",
   "il": "whois.isoc.org.il",
   "im": "whois.nic.im",
-  "immobilien": "whois.unitedtld.com",
   "in": "whois.inregistry.net",
-  "info": "whois.afilias.net",
-  "institute": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "int": "whois.iana.org",
-  "international": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "io": {
-    "host": "whois.nic.io",
-    "command": "$ADDR"
-  },
+  "io": "whois.nic.io",
   "iq": "whois.cmc.iq",
   "ir": "whois.nic.ir",
-  "is": {
-    "host": "whois.isnic.is",
-    "command": "$ADDR"
-  },
+  "is": "whois.isnic.is",
   "it": "whois.nic.it",
   "je": "whois.je",
   "jm": null,
   "jo": null,
-  "jobs": "jobswhois.verisign-grs.com",
   "jp": "whois.jprs.jp",
-  "kaufen": "whois.unitedtld.com",
   "ke": "whois.kenic.or.ke",
   "kg": "whois.domain.kg",
   "kh": null,
-  "ki": "whois.nic.ki",
-  "kim": "whois.afilias.net",
-  "kitchen": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "kiwi": "whois.dot-kiwi.com",
+  "ki": "whois.nic.mu",
   "km": null,
   "kn": null,
   "kp": null,
@@ -368,391 +274,201 @@
   "ky": null,
   "kz": "whois.nic.kz",
   "la": "whois.nic.la",
-  "land": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "lb": null,
-  "lc": null,
-  "li": {
-    "host": "whois.nic.li",
-    "command": "$ADDR"
-  },
-  "lighting": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "limo": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "link": "whois.uniregistry.net",
-  "lk": null,
+  "lc": "whois.afilias-grs.info",
+  "li": "whois.nic.li",
+  "lk": "whois.nic.lk",
   "lr": null,
   "ls": null,
   "lt": "whois.domreg.lt",
   "lu": "whois.dns.lu",
-  "luxury": "whois.luxury.aridnrs.net.au",
   "lv": "whois.nic.lv",
   "ly": "whois.nic.ly",
   "ma": "whois.iam.net.ma",
-  "management": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "marketing": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "mc": null,
-  "md": "whois.nic.md",
+  "md": null,
   "me": "whois.nic.me",
-  "menu": "whois.nic.menu",
   "mf": null,
   "mg": "whois.nic.mg",
   "mh": null,
-  "mil": null,
   "mk": null,
   "ml": "whois.dot.ml",
   "mm": null,
   "mn": "whois.nic.mn",
-  "mo": "whois.monic.mo",
-  "mobi": "whois.dotmobiregistry.net",
-  "moda": "whois.unitedtld.com",
-  "monash": "whois.nic.monash",
-  "mp": "whois.nic.mp",
+  "mo": null,
+  "mp": null,
   "mq": null,
   "mr": null,
   "ms": "whois.nic.ms",
   "mt": null,
   "mu": "whois.nic.mu",
-  "museum": "whois.museum",
   "mv": null,
   "mw": null,
   "mx": "whois.mx",
   "my": "whois.domainregistry.my",
   "mz": null,
   "na": "whois.na-nic.com.na",
-  "nagoya": null,
-  "name": "whois.nic.name",
   "nc": "whois.nc",
   "ne": null,
-  "net": "whois.verisign-grs.com",
-  "nf": "whois.nic.net.nf",
+  "nf": "whois.nic.nf",
   "ng": "whois.nic.net.ng",
   "ni": null,
-  "ninja": "whois.unitedtld.com",
   "nl": "whois.domain-registry.nl",
   "no": "whois.norid.no",
   "np": null,
   "nr": null,
-  "nu": "whois.nic.nu",
-  "nz": {
-    "host": "whois.srs.net.nz",
-    "command": "$ADDR"
-  },
+  "nu": "whois.iis.nu",
+  "nz": "whois.srs.net.nz",
   "om": "whois.registry.om",
-  "onl": "whois.afilias-srs.net",
-  "org": "whois.pir.org",
   "pa": null,
-  "partners": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "parts": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "pe": "kero.yachay.pe",
   "pf": "whois.registry.pf",
   "pg": null,
   "ph": null,
-  "photo": "whois.uniregistry.net",
-  "photography": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "photos": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "pics": "whois.uniregistry.net",
-  "pink": "whois.afilias.net",
   "pk": null,
+  "co.pl": "whois.co.pl",
   "pl": "whois.dns.pl",
-  "plumbing": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "pm": "whois.nic.pm",
   "pn": null,
-  "post": "whois.dotpostregistry.net",
   "pr": "whois.nic.pr",
-  "pro": "whois.dotproregistry.net",
-  "productions": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "properties": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "ps": null,
+  "ps": "whois.pnina.ps",
   "pt": "whois.dns.pt",
   "pw": "whois.nic.pw",
   "py": null,
   "qa": "whois.registry.qa",
   "re": "whois.nic.re",
-  "recipes": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "red": "whois.afilias.net",
-  "rentals": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "repair": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "report": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "reviews": "whois.unitedtld.com",
-  "rich": "whois.afilias-srs.net",
   "ro": "whois.rotld.ro",
   "rs": "whois.rnids.rs",
+  "edu.ru": "whois.informika.ru",
   "ru": "whois.tcinet.ru",
-  "ruhr": "whois.nic.ruhr",
-  "rw": null,
+  "rw": "whois.ricta.org.rw",
   "sa": "whois.nic.net.sa",
-  "sb": "whois.nic.net.sb",
-  "sc": "whois2.afilias-grs.net",
+  "sb": "whois.nic.sb",
+  "sc": "whois.afilias-grs.info",
   "sd": null,
   "se": "whois.iis.se",
-  "sexy": "whois.uniregistry.net",
   "sg": "whois.sgnic.sg",
-  "sh": {
-    "host": "whois.nic.sh",
-    "command": "$ADDR"
-  },
-  "shiksha": "whois.afilias.net",
-  "shoes": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
+  "sh": "whois.nic.sh",
   "si": "whois.arnes.si",
-  "singles": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "sj": null,
   "sk": "whois.sk-nic.sk",
-  "sl": null,
+  "sl": "whois.nic.sl",
   "sm": "whois.nic.sm",
   "sn": "whois.nic.sn",
   "so": "whois.nic.so",
-  "social": "whois.unitedtld.com",
-  "solar": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "solutions": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "sr": null,
   "ss": null,
   "st": "whois.nic.st",
   "su": "whois.tcinet.ru",
-  "support": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "sv": null,
   "sx": "whois.sx",
   "sy": "whois.tld.sy",
-  "systems": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "sz": null,
-  "tattoo": "whois.uniregistry.net",
   "tc": "whois.adamsnames.tc",
   "td": null,
-  "technology": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "tel": "whois.nic.tel",
   "tf": "whois.nic.tf",
   "tg": null,
   "th": "whois.thnic.co.th",
-  "tienda": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "tips": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "tj": null,
   "tk": "whois.dot.tk",
   "tl": "whois.nic.tl",
-  "tm": {
-    "host": "whois.nic.tm",
-    "command": "$ADDR"
-  },
+  "tm": "whois.nic.tm",
   "tn": "whois.ati.tn",
   "to": "whois.tonic.to",
-  "today": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "tokyo": null,
-  "tools": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "tp": null,
   "tr": "whois.nic.tr",
-  "training": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "travel": "whois.nic.travel",
   "tt": null,
   "tv": "tvwhois.verisign-grs.com",
   "tw": "whois.twnic.net.tw",
   "tz": "whois.tznic.or.tz",
+  "biz.ua": "whois.biz.ua",
+  "co.ua": "whois.co.ua",
+  "pp.ua": "whois.pp.ua",
   "ua": "whois.ua",
   "ug": "whois.co.ug",
+  "ac.uk": "whois.ja.net",
+  "bl.uk": null,
+  "british-library.uk": null,
+  "gov.uk": "whois.ja.net",
+  "icnet.uk": null,
+  "jet.uk": null,
+  "mod.uk": null,
+  "nhs.uk": null,
+  "nls.uk": null,
+  "parliament.uk": null,
+  "police.uk": null,
   "uk": "whois.nic.uk",
   "um": null,
-  "uno": null,
+  "fed.us": "whois.nic.gov",
   "us": "whois.nic.us",
+  "com.uy": null,
   "uy": "whois.nic.org.uy",
   "uz": "whois.cctld.uz",
   "va": null,
-  "vc": "whois2.afilias-grs.net",
+  "vc": "whois.afilias-grs.info",
   "ve": "whois.nic.ve",
-  "ventures": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "vg": "whois.adamsnames.tc",
   "vi": null,
-  "viajes": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "villas": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "vision": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "vn": null,
-  "voting": "whois.voting.tld-box.at",
-  "voyage": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "vu": "vunic.vu",
-  "wang": "whois.gtld.knet.cn",
-  "watch": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "wed": "whois.nic.wed",
+  "vu": null,
   "wf": "whois.nic.wf",
-  "wien": "whois.nic.wien",
-  "works": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "ws": "whois.website.ws",
-  "xxx": "whois.nic.xxx",
   "ye": null,
   "yt": "whois.nic.yt",
+  "ac.za": "whois.ac.za",
+  "alt.za": "whois.alt.za",
+  "co.za": "whois.registry.net.za",
+  "gov.za": "whois.gov.za",
+  "net.za": "whois.net.za",
+  "org.za": null,
+  "web.za": "whois.web.za",
   "za": null,
   "zm": null,
-  "zone": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
   "zw": null,
-  "δοκιμή": null,
-  "испытание": null,
-  "мон": null,
-  "онлайн": "whois.online.rs.corenic.net",
-  "рф": "whois.tcinet.ru",
-  "сайт": "whois.site.rs.corenic.net",
-  "срб": null,
-  "укр": "whois.dotukr.com",
-  "қаз": "whois.nic.kz",
-  "טעסט": null,
-  "آزمایشی": null,
-  "إختبار": null,
-  "الاردن": null,
-  "الجزائر": "whois.nic.dz",
-  "السعودية": "whois.nic.net.sa",
-  "المغرب": null,
-  "امارات": "whois.aeda.net.ae",
-  "ایران": "whois.nic.ir",
-  "بھارت": null,
-  "تونس": null,
-  "سودان": null,
-  "سورية": "whois.tld.sy",
-  "شبكة": "whois.nic.xn--ngbc5azd",
-  "عمان": "whois.registry.om",
-  "فلسطين": "whois.pnina.ps",
-  "قطر": "whois.registry.qa",
-  "مصر": null,
-  "مليسيا": "whois.domainregistry.my",
-  "پاکستان": null,
-  "परीक्षा": null,
-  "भारत": null,
-  "বাংলা": null,
-  "ভারত": null,
-  "ਭਾਰਤ": null,
-  "ભારત": null,
-  "இந்தியா": null,
-  "இலங்கை": null,
-  "சிங்கப்பூர்": "whois.sgnic.sg",
-  "பரிட்சை": null,
-  "భారత్": null,
-  "ලංකා": null,
-  "ไทย": "whois.thnic.co.th",
-  "გე": null,
-  "みんな": "domain-registry-whois.l.google.com",
-  "テスト": null,
-  "中信": "whois.gtld.knet.cn",
-  "中国": "cwhois.cnnic.cn",
-  "中國": "cwhois.cnnic.cn",
-  "中文网": "whois.afilias-srs.net",
-  "公司": "whois.ngtld.cn",
-  "公益": "whois.conac.cn",
-  "台湾": "whois.twnic.net.tw",
-  "台灣": "whois.twnic.net.tw",
-  "在线": "whois.afilias-srs.net",
-  "我爱你": "whois.gtld.knet.cn",
-  "政务": "whois.conac.cn",
-  "新加坡": "whois.sgnic.sg",
-  "测试": null,
-  "測試": null,
-  "游戏": {
-    "host": "whois.donuts.co",
-    "command": "$ADDR"
-  },
-  "移动": "whois.afilias.net",
-  "网络": "whois.ngtld.cn",
-  "集团": "whois.gtld.knet.cn",
-  "香港": "whois.hkirc.hk",
-  "테스트": null,
-  "한국": "whois.kr"
+
+  "xn--3e0b707e": "whois.kr",
+  "xn--45brj9c": "whois.inregistry.net",
+  "xn--80ao21a": "whois.nic.kz",
+  "xn--90a3ac": "whois.rnids.rs",
+  "xn--clchc0ea0b2g2a9gcd": "whois.sgnic.sg",
+  "xn--fiqs8s": "cwhois.cnnic.cn",
+  "xn--fiqz9s": "cwhois.cnnic.cn",
+  "xn--fpcrj9c3d": "whois.inregistry.net",
+  "xn--fzc2c9e2c": "whois.nic.lk",
+  "xn--gecrj9c": "whois.inregistry.net",
+  "xn--h2brj9c": "whois.inregistry.net",
+  "xn--j1amh": "whois.dotukr.com",
+  "xn--j6w193g": "whois.hkirc.hk",
+  "xn--kprw13d": "whois.twnic.net.tw",
+  "xn--kpry57d": "whois.twnic.net.tw",
+  "xn--l1acc": "whois.nic.mn",
+  "xn--lgbbat1ad8j": "whois.nic.dz",
+  "xn--mgb9awbf": "whois.registry.om",
+  "xn--mgba3a4f16a": "whois.nic.ir",
+  "xn--mgbaam7a8h": "whois.aeda.net.ae",
+  "xn--mgbayh7gpa": null,
+  "xn--mgbbh1a71e": "whois.inregistry.net",
+  "xn--mgbc0a9azcg": null,
+  "xn--mgberp4a5d4ar": "whois.nic.net.sa",
+  "xn--mgbx4cd0ab": "whois.domainregistry.my",
+  "xn--o3cw4h": "whois.thnic.co.th",
+  "xn--ogbpf8fl": "whois.tld.sy",
+  "xn--p1ai": "whois.tcinet.ru",
+  "xn--pgbs0dh": null,
+  "xn--s9brj9c": "whois.inregistry.net",
+  "xn--wgbh1c": "whois.dotmasr.eg",
+  "xn--wgbl6a": "whois.registry.qa",
+  "xn--xkc2al3hye2a": "whois.nic.lk",
+  "xn--xkc2dl3a5ee0h": "whois.inregistry.net",
+  "xn--yfro4i67o": "whois.sgnic.sg",
+  "xn--ygbi2ammx": "whois.pnina.ps",
+  
+  "": "whois.ripe.net",
+
+  "_": {
+    "ipv4": {
+      "host": "whois.arin.net",
+      "query": "n $addr\r\n"
+    }
+  }
 }

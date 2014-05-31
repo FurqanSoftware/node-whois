@@ -1,5 +1,5 @@
 .git*
-sync.py
-test.js
+*.coffee
+Makefile
 
 *.sublime-*

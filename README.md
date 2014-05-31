@@ -1,6 +1,6 @@
-# Node WHOIS
+# Node-whois
 
-A simple WHOIS client for NodeJS.
+Node-whois is a WHOIS client for Node.js.
 
 ## Installation
 
@@ -8,39 +8,24 @@ A simple WHOIS client for NodeJS.
 
 ## Usage
 
-    var whois = require('node-whois')
+```js
+var whois = require('node-whois')
+whois.lookup('google.com', function(err, data) {
+	console.log(data)
+})
+```
 
-    whois.lookup(addr, [options], done)
+You may pass an object in between the address and the callback function to tweak the behavior of the lookup function:
 
-* `addr` is the address to be looked up
-
-* `options`
-
-  * `server` is a hash with `host` and `port` of the WHOIS server
-
-  * `follow` is the number of times redirection will be honored
-
-  * `timeout` is the number of milliseconds after which the connection will timeout
-
-## Examples
-
-### Basic
-
-    whois.lookup('google.com', function(err, data) {
-      console.log(err, data)
-    })
-
-### Advanced
-
-    whois.lookup('google.com', {
-      server: {
-        host: 'whois.markmonitor.com'
-      },
-      timeout: 5000
-    }, function(err, data) {
-      console.log(err, data)
-    })
+```js
+{
+	"server":  "",   // this can a string ("host:port") or an object with host and port as its keys; leaving it empty makes lookup rely on servers.json
+	"follow":  0,    // number of times to follow redirects
+	"timeout": 0,    // socket timeout, excluding this doesn't override any default timeout value
+	"verbose": false // setting this to true returns an array of responses from all servers
+}
+```
 
 ## License
 
-FreeBSD
+Node-whois is available under the [BSD (2-Clause) License](http://opensource.org/licenses/BSD-2-Clause).
