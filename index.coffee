@@ -66,10 +66,28 @@ SERVERS = require './servers.json'
 		if options.follow > 0
 			match = data.match /(ReferralServer|Registrar Whois|Whois Server):\s*(whois:\/\/)?(.+)/
 			if match?
-				@lookup addr, server: match[3], done
+				options = _.extend {}, options,
+					server: match[3]
+				@lookup addr, options, (err, data2) =>
+					if err?
+						return done err
+
+					if options.verbose
+						done null, [
+							server: server
+							data: data
+						].concat(data2)
+					else
+						done null, data2
 				return
 
-		done null, data
+		if options.verbose
+			done null, [
+				server: server
+				data: data
+			]
+		else
+			done null, data
 
 
 if module is require.main
