@@ -11,6 +11,9 @@ SERVERS = require './servers.json'
 		done = options
 		options = {}
 
+	_.defaults options,
+		follow: 2
+
 	done = _.once done
 
 	server = options.server
