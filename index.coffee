@@ -71,6 +71,7 @@ SERVERS = require './servers.json'
 			match = data.match /(ReferralServer|Registrar Whois|Whois Server):\s*(whois:\/\/)?(.+)/
 			if match?
 				options = _.extend {}, options,
+					follow: options.follow - 1
 					server: match[3]
 				@lookup addr, options, (err, parts) =>
 					if err?
