@@ -26,6 +26,10 @@ You may pass an object in between the address and the callback function to tweak
 }
 ```
 
+## Contributing
+
+Contributions are welcome.
+
 ## License
 
 Node-whois is available under the [BSD (2-Clause) License](http://opensource.org/licenses/BSD-2-Clause).
