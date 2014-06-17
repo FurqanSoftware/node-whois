@@ -27,7 +27,10 @@
   },
 
   "za.net": "whois.za.net",
-  "net": "whois.verisign-grs.com",
+  "net": {
+    "host": "whois.verisign-grs.com",
+    "query": "DOMAIN $addr\r\n"
+  },
 
   "eu.org": "whois.eu.org",
   "za.org": "whois.za.org",
@@ -39,7 +42,7 @@
   "mil": null,
 
   "e164.arpa": "whois.ripe.net",
-  "in-addr.arpa": "ARPA",
+  "in-addr.arpa": null,
   "arpa": "whois.iana.org",
 
   "aero": "whois.aero",
