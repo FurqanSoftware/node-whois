@@ -25,7 +25,7 @@ You may pass an object in between the address and the callback function to tweak
     "cache": true,   // cache results for 24 hours (default)
 	"follow":  2,    // number of times to follow redirects
 	"timeout": 0,    // socket timeout, excluding this doesn't override any default timeout value
-	"verbose": false // setting this to true returns an array of responses from all servers,
+	"verbose": false // setting this to true returns an array of responses from all servers
 }
 ```
 
