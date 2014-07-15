@@ -2,6 +2,8 @@ _ = require 'underscore'
 net = require 'net'
 punycode = require 'punycode'
 util = require 'util'
+fs = require 'fs'
+os = require 'os'
 
 
 @SERVERS = require './servers.json'
@@ -12,6 +14,7 @@ util = require 'util'
 		options = {}
 
 	_.defaults options,
+		cache: true
 		follow: 2
 
 	done = _.once done
@@ -53,6 +56,21 @@ util = require 'util'
 		port: 43
 		query: "$addr\r\n"
 
+	cache = options.cache
+
+	if cache
+		if typeof cache != 'string'
+			cache = os.tmpdir() + "node-whois-" + addr
+
+		if fs.existsSync(cache)
+			stats = fs.statSync(cache)
+
+			if stats.ctime >= new Date(new Date().getTime() - 86400000)
+				fs.readFile cache,
+					encoding: "utf-8"
+				, done
+				return
+
 	socket = net.connect server.port, server.host, =>
 		idn = addr
 		if server.punycode isnt false
@@ -91,6 +109,12 @@ util = require 'util'
 					else
 						done null, parts
 				return
+
+		if cache
+			data = data.replace(/\r\n|\r|\n/g, os.EOL)
+			now = (new Date()).toISOString()
+			data = ">>> Last update of client data cache: #{now} <<<#{os.EOL}#{data}"
+			fs.writeFile cache, data
 
 		if options.verbose
 			done null, [
