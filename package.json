@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepublish": "make",
-    "pretest": "make",
-    "test": "mocha -u bdd -R spec -t 10000 -s 5000 --compilers coffee:coffee-script test.coffee"
+    "test": "make test"
   },
   "repository": {
     "type": "git",

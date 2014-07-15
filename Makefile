@@ -7,3 +7,6 @@ clean:
 
 index.js: index.coffee
 	coffee -c $^
+
+test: index.js test.coffee
+	mocha -u bdd -R spec -t 10000 -s 5000 --compilers coffee:coffee-script test.coffee
