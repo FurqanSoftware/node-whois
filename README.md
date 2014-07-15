@@ -22,7 +22,7 @@ You may pass an object in between the address and the callback function to tweak
 ```js
 {
 	"server":  "",   // this can be a string ("host:port") or an object with host and port as its keys; leaving it empty makes lookup rely on servers.json
-    "cache": true,   // cache results for 24 hours (default)
+	"cache": true,   // cache results for 24 hours (default)
 	"follow":  2,    // number of times to follow redirects
 	"timeout": 0,    // socket timeout, excluding this doesn't override any default timeout value
 	"verbose": false // setting this to true returns an array of responses from all servers
