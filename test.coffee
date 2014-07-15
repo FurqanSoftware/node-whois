@@ -19,13 +19,17 @@ describe '#lookup()', ->
 	it 'should honor specified WHOIS server', (done) ->
 		whois.lookup 'gandi.net', server: 'whois.gandi.net', (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('domain name: gandi.net'), -1
+			data = data.toLowerCase()
+			assert.notEqual data.indexOf('whois server: whois.gandi.net'), -1
+			assert.notEqual data.indexOf('domain name: gandi.net'), -1
 			done()
 
 	it 'should honor specified WHOIS server with port override', (done) ->
 		whois.lookup 'tucows.com', server: 'whois.tucows.com:43', (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('domain name: tucows.com'), -1
+			data = data.toLowerCase()
+			assert.notEqual data.indexOf('whois server: whois.tucows.com'), -1
+			assert.notEqual data.indexOf('domain name: tucows.com'), -1
 			done()
 
 	it 'should follow specified number of redirects for domain', (done) ->
