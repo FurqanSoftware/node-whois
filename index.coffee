@@ -70,6 +70,8 @@ os = require 'os'
 					encoding: "utf-8"
 				, done
 				return
+			else
+				fs.unlink cache
 
 	socket = net.connect server.port, server.host, =>
 		idn = addr
