@@ -110,7 +110,7 @@ os = require 'os'
 						done null, parts
 				return
 
-		if cache
+		if cache and data.match(new RegExp(addr, "i"))
 			data = data.replace(/\r\n|\r|\n/g, os.EOL)
 			now = (new Date()).toISOString()
 			data = ">>> Last update of client data cache: #{now} <<<#{os.EOL}#{data}"
