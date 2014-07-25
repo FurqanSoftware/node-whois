@@ -26,6 +26,15 @@ describe '#lookup()', ->
 			assert.notEqual data.indexOf('domain name: ename.com'), -1
 			done()
 
+	it 'should cache different results with different options', (done) ->
+		whois.lookup 'ename.com', cache: true, server: 'whois.easyspace.com', follow: 0, (err, data) ->
+			assert.ifError err
+			data = data.toLowerCase()
+			assert.notEqual data.indexOf('whois.easyspace.com'), -1
+			assert.notEqual data.indexOf('client data cache: '), -1
+			assert.notEqual data.indexOf('domain name: ename.com'), -1
+			done()
+
 	it 'should work with 50.116.8.109', (done) ->
 		whois.lookup '50.116.8.109', (err, data) ->
 			assert.ifError err
