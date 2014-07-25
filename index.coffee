@@ -4,6 +4,7 @@ punycode = require 'punycode'
 util = require 'util'
 fs = require 'fs'
 os = require 'os'
+crypto = require 'crypto'
 
 
 @SERVERS = require './servers.json'
@@ -60,7 +61,12 @@ os = require 'os'
 
 	if cache
 		if typeof cache != 'string'
-			cache = os.tmpdir() + "node-whois-" + addr
+			cache = os.tmpdir() + "node-whois-" + crypto
+			.createHash('md5')
+			.update(addr + JSON.stringify(
+				_.omit(options, 'cache', 'timeout')
+			))
+			.digest('hex')
 
 		if fs.existsSync(cache)
 			stats = fs.statSync(cache)
@@ -115,7 +121,7 @@ os = require 'os'
 		if cache and data.match(new RegExp(addr, "i"))
 			data = data.replace(/\r\n|\r|\n/g, os.EOL)
 			now = (new Date()).toISOString()
-			data = ">>> Last update of client data cache: #{now} <<<#{os.EOL}#{data}"
+			data = ">>> Last update of client data cache: #{now} <<<#{os.EOL}>>> lookup options #{JSON.stringify(_.omit(options, 'cache', 'timeout'))} <<<#{os.EOL}#{data}"
 			fs.writeFile cache, data
 
 		if options.verbose
