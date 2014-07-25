@@ -4,6 +4,7 @@ all: index.js
 
 clean:
 	rm -rf index.js
+	coffee clean.coffee
 
 index.js: index.coffee
 	coffee -c $^
