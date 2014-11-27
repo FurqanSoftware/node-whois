@@ -1,5 +1,7 @@
 # Node-whois
 
+[![Build Status](https://drone.io/github.com/hjr265/node-whois/status.png)](https://drone.io/github.com/hjr265/node-whois/latest)
+
 Node-whois is a WHOIS client for Node.js.
 
 ## Installation
