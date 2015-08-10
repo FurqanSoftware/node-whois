@@ -4,7 +4,7 @@ punycode = require 'punycode'
 util = require 'util'
 
 
-SERVERS = require './servers.json'
+@SERVERS = require './servers.json'
 
 @lookup = (addr, options, done) =>
 	if typeof done is 'undefined' and typeof options is 'function'
@@ -29,12 +29,12 @@ SERVERS = require './servers.json'
 				return
 
 			when (addr.match /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/)?
-				server = SERVERS['_']['ipv4']
+				server = @SERVERS['_']['ipv4']
 
 			else
 				tld = punycode.toASCII addr
 				while true
-					server = SERVERS[tld]
+					server = @SERVERS[tld]
 					if not tld or server
 						break
 					tld = tld.replace /^.+?(\.|$)/, ''
@@ -45,7 +45,7 @@ SERVERS = require './servers.json'
 
 	if typeof server is 'string'
 		parts = server.split ':'
-		server = 
+		server =
 			host: parts[0]
 			port: parts[1]
 
