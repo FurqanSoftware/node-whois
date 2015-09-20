@@ -271,6 +271,7 @@
   "solar": "whois.nic.solar",
   "solutions": "whois.nic.solutions",
   "soy": "whois.nic.soy",
+  "space": "whois.nic.space",
   "supplies": "whois.nic.supplies",
   "supply": "whois.nic.supply",
   "support": "whois.nic.support",
@@ -664,7 +665,7 @@
   "xn--xkc2dl3a5ee0h": "whois.inregistry.net",
   "xn--yfro4i67o": "whois.sgnic.sg",
   "xn--ygbi2ammx": "whois.pnina.ps",
-  
+
   "": "whois.ripe.net",
 
   "_": {
