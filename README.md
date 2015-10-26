@@ -1,17 +1,17 @@
-# Node-whois
+# Node WHOIS
 
 [![Build Status](https://drone.io/github.com/hjr265/node-whois/status.png)](https://drone.io/github.com/hjr265/node-whois/latest)
 
-Node-whois is a WHOIS client for Node.js.
+Node WHOIS is a WHOIS client for Node.js.
 
 ## Installation
 
-    $ npm install node-whois
+    $ npm install whois
 
 ## Usage
 
 ```js
-var whois = require('node-whois')
+var whois = require('whois')
 whois.lookup('google.com', function(err, data) {
 	console.log(data)
 })
@@ -34,4 +34,4 @@ Contributions are welcome.
 
 ## License
 
-Node-whois is available under the [BSD (2-Clause) License](http://opensource.org/licenses/BSD-2-Clause).
+Node WHOIS is available under the [BSD (2-Clause) License](http://opensource.org/licenses/BSD-2-Clause).
