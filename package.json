@@ -1,5 +1,5 @@
 {
-  "name": "node-whois",
+  "name": "whois",
   "version": "2.1.3",
   "description": "A WHOIS client for NodeJS",
   "main": "index.js",
