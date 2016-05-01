@@ -54,7 +54,10 @@ util = require 'util'
 		query: "$addr\r\n"
 
 	socket = net.connect server.port, server.host, =>
-		socket.write server.query.replace '$addr', punycode.toASCII addr
+		idn = addr
+		if server.punycode isnt false
+			idn = punycode.toASCII addr
+		socket.write server.query.replace '$addr', idn
 	socket.setEncoding 'utf-8'
 	if options.timeout?
 		socket.setTimeout options.timeout
