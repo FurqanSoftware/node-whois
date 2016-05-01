@@ -405,7 +405,11 @@
   "cx": "whois.nic.cx",
   "cy": null,
   "cz": "whois.nic.cz",
-  "de": "whois.denic.de",
+  "de": {
+      "host": "whois.denic.de",
+      "query": "$addr\r\n",
+      "punycode": false
+  },
   "dj": null,
   "dk": "whois.dk-hostmaster.dk",
   "dm": "whois.nic.dm",
