@@ -80,7 +80,7 @@ describe '#lookup()', ->
 			assert.notEqual data.toLowerCase().indexOf('domain name: google.com'), -1
 			done()
 
-	it.only 'should work with küche.de', (done) ->
+	it 'should work with küche.de', (done) ->
 		whois.lookup 'küche.de', (err, data) ->
 			assert.ifError err
 			assert.notEqual data.toLowerCase().indexOf('domain: küche.de'), -1
