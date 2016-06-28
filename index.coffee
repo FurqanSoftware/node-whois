@@ -61,7 +61,7 @@ crypto = require 'crypto'
 
 	if cache
 		if typeof cache != 'string'
-			cache = os.tmpdir() + "node-whois-" + crypto
+			cache = os.tmpdir() + "/node-whois-" + crypto
 			.createHash('md5')
 			.update(addr + JSON.stringify(
 				_.omit(options, 'cache', 'timeout')

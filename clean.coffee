@@ -8,4 +8,4 @@ os = require 'os'
 files = fs.readdirSync os.tmpdir()
 _.each files, (file) ->
 	if file.match(/^node-whois-/)
-		fs.unlinkSync os.tmpdir() + file
+		fs.unlinkSync os.tmpdir() + "/" + file
