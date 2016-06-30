@@ -55,7 +55,7 @@ util = require 'util'
 
 	socket = net.connect server.port, server.host, =>
 		idn = addr
-		if server.punycode isnt false
+		if options.punycode isnt false
 			idn = punycode.toASCII addr
 		socket.write server.query.replace '$addr', idn
 	socket.setEncoding 'utf-8'
