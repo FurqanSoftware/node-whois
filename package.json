@@ -3,6 +3,9 @@
   "version": "2.2.0",
   "description": "A WHOIS client for NodeJS",
   "main": "index.js",
+  "bin": {
+    "whois": "index.js"
+  },
   "scripts": {
     "prepublish": "make",
     "test": "make test"
