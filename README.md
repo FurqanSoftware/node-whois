@@ -4,7 +4,7 @@
 
 Node WHOIS is a WHOIS client for Node.js.
 
-## Globally Installation
+## Global Installation
 
     $ npm install -g whois
 
@@ -18,7 +18,7 @@ Node WHOIS is a WHOIS client for Node.js.
       -v, --verbose  show verbose results                 [default: false]
       -h, --help     display this help message            [default: false]
 
-## Locally Installation
+## Local Installation
 
     $ npm install whois
 
