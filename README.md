@@ -6,9 +6,25 @@ Node WHOIS is a WHOIS client for Node.js.
 
 ## Installation
 
+### Global
+
+    $ npm install -g whois
+
+#### Usage
+
+    whois [options] address
+
+    Options:
+      -s, --server   whois server                         [default: null]
+      -f, --follow   number of times to follow redirects  [default: 0]
+      -v, --verbose  show verbose results                 [default: false]
+      -h, --help     display this help message            [default: false]
+
+### Local
+
     $ npm install whois
 
-## Usage
+#### Usage
 
 ```js
 var whois = require('whois')
