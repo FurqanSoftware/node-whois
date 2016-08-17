@@ -86,3 +86,9 @@ describe '#lookup()', ->
 			assert.notEqual data.toLowerCase().indexOf('domain: küche.de'), -1
 			assert.notEqual data.toLowerCase().indexOf('status: connect'), -1
 			done()
+
+	it 'should work with google.co.jp in english', (done) ->
+		whois.lookup 'google.co.jp', (err, data) ->
+			assert.ifError err
+			assert.notEqual data.toLowerCase().indexOf('a. [domain name]                google.co.jp'), -1
+			done()
