@@ -468,7 +468,10 @@
   "je": "whois.je",
   "jm": null,
   "jo": null,
-  "jp": "whois.jprs.jp",
+  "jp": {
+      "host": "whois.jprs.jp",
+      "query": "$addr/e\r\n"
+  },
   "ke": "whois.kenic.or.ke",
   "kg": "whois.domain.kg",
   "kh": null,
