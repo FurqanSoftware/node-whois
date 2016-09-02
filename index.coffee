@@ -67,6 +67,7 @@ util = require 'util'
 		data += chunk
 
 	socket.on 'timeout', =>
+		socket.destroy()
 		done new Error 'lookup: timeout'
 
 	socket.on 'error', (err) =>
