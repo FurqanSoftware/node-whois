@@ -676,7 +676,7 @@
   "": "whois.ripe.net",
 
   "_": {
-    "ipv4": {
+    "ip": {
       "host": "whois.arin.net",
       "query": "n + $addr\r\n"
     }
