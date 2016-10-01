@@ -16,6 +16,12 @@ describe '#lookup()', ->
 			assert.notEqual data.toLowerCase().indexOf('netname:        linode-us'), -1
 			done()
 
+	it 'should work with 2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d', (done) ->
+		whois.lookup '2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d', (err, data) ->
+			assert.ifError err
+			assert.notEqual data.toLowerCase().indexOf('netname:        ipv6-doc-ap'), -1
+			done()
+
 	it 'should honor specified WHOIS server', (done) ->
 		whois.lookup 'gandi.net', server: 'whois.gandi.net', (err, data) ->
 			assert.ifError err
