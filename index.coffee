@@ -20,16 +20,12 @@ util = require 'util'
 
 	if not server
 		switch true
-			when _.contains addr, ':'
-				done new Error 'lookup: IPv6 not supported'
-				return
-
 			when _.contains addr, '@'
 				done new Error 'lookup: email addresses not supported'
 				return
 
-			when (addr.match /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/)?
-				server = @SERVERS['_']['ipv4']
+			when net.isIP(addr) isnt 0
+				server = @SERVERS['_']['ip']
 
 			else
 				tld = punycode.toASCII addr
