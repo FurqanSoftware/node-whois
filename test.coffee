@@ -98,3 +98,9 @@ describe '#lookup()', ->
 			assert.ifError err
 			assert.notEqual data.toLowerCase().indexOf('a. [domain name]                google.co.jp'), -1
 			done()
+
+	it.only 'should work with registry.pro', (done) ->
+		whois.lookup 'registry.pro', (err, data) ->
+			assert.ifError err
+			assert.notEqual data.toLowerCase().indexOf('domain id: d107300000000006392-lrms'), -1
+			done()
