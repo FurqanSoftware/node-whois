@@ -408,7 +408,7 @@
   "cz": "whois.nic.cz",
   "de": {
       "host": "whois.denic.de",
-      "query": "$addr\r\n",
+      "query": "-T dn $addr\r\n",
       "punycode": false
   },
   "dj": null,
