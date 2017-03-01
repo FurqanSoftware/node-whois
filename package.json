@@ -1,6 +1,6 @@
 {
   "name": "whois",
-  "version": "2.3.7",
+  "version": "2.3.8",
   "description": "A WHOIS client for NodeJS",
   "main": "index.js",
   "bin": {
