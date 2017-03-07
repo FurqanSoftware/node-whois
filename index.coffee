@@ -49,7 +49,15 @@ util = require 'util'
 		port: 43
 		query: "$addr\r\n"
 
-	socket = net.connect server.port, server.host, =>
+	connectOptions = {
+		host: server.host,
+		port: server.port
+	}
+
+	if options.bind
+		connectOptions.localAddress = options.bind
+
+	socket = net.connect connectOptions, =>
 		idn = addr
 		if server.punycode isnt false and options.punycode isnt false
 			idn = punycode.toASCII addr
@@ -111,6 +119,9 @@ if module is require.main
 	.default('v', no)
 	.alias('v', 'verbose')
 	.describe('v', 'show verbose results')
+	.alias('b', 'bind')
+	.describe('b', 'bind to local ip address')
+	.default('b', null)
 	.boolean('h')
 	.default('h', no)
 	.alias('h', 'help')
@@ -124,7 +135,7 @@ if module is require.main
 		console.log optimist.help()
 		process.exit 1
 
-	@lookup optimist.argv._[0], server: optimist.argv.server, follow: optimist.argv.follow, verbose: optimist.argv.verbose, (err, data) =>
+	@lookup optimist.argv._[0], server: optimist.argv.server, follow: optimist.argv.follow, verbose: optimist.argv.verbose, bind: optimist.argv.bind,  (err, data) =>
 		if err?
 			console.log err
 			process.exit 1
