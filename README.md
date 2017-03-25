@@ -18,6 +18,7 @@ Node WHOIS is a WHOIS client for Node.js.
       -s, --server   whois server                         [default: null]
       -f, --follow   number of times to follow redirects  [default: 0]
       -v, --verbose  show verbose results                 [default: false]
+      -b, --bind     bind to local ip address             [default: null]
       -h, --help     display this help message            [default: false]
 
 ### Local
@@ -41,6 +42,7 @@ You may pass an object in between the address and the callback function to tweak
 	"follow":  2,    // number of times to follow redirects
 	"timeout": 0,    // socket timeout, excluding this doesn't override any default timeout value
 	"verbose": false // setting this to true returns an array of responses from all servers
+	"bind": null     // bind the socket to a local IP address
 }
 ```
 
