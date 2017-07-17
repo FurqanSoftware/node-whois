@@ -74,6 +74,12 @@ describe '#lookup()', ->
 			assert.notEqual data.toLowerCase().indexOf('status : permanent/reserved'), -1
 			done()
 
+	it 'should work with nic.global', (done) ->
+		whois.lookup 'nic.global', (err, data) ->
+			assert.ifError err
+			assert.notEqual data.toLowerCase().indexOf('registry domain id: d2836144-agrs'), -1
+			done()
+
 	it 'should work with srs.net.nz', (done) ->
 		whois.lookup 'srs.net.nz', (err, data) ->
 			assert.ifError err
