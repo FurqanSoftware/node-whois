@@ -19,7 +19,7 @@ describe '#lookup()', ->
 	it 'should work with 2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d', (done) ->
 		whois.lookup '2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d', (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('netname:        ipv6-doc-ap'), -1
+			assert.notEqual data.toLowerCase().indexOf('nethandle:      net6-2001-c00-1'), -1
 			done()
 
 	it 'should honor specified WHOIS server', (done) ->
@@ -47,31 +47,31 @@ describe '#lookup()', ->
 	it 'should follow specified number of redirects for IP address', (done) ->
 		whois.lookup '176.58.115.202', follow: 1, (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('netname:        linode-uk'), -1
+			assert.notEqual data.toLowerCase().indexOf('nethandle:      net-176-0-0-0-0'), -1
 			done()
 
 	it 'should work with nic.sh', (done) ->
 		whois.lookup 'nic.sh', (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('domain reserved'), -1
+			assert.notEqual data.toLowerCase().indexOf('registry domain id: d503300000040403495-lrms'), -1
 			done()
 
 	it 'should work with nic.io', (done) ->
 		whois.lookup 'nic.io', (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('domain reserved'), -1
+			assert.notEqual data.toLowerCase().indexOf('registry domain id: d503300000040453277-lrms'), -1
 			done()
 
 	it 'should work with nic.ac', (done) ->
 		whois.lookup 'nic.ac', (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('domain reserved'), -1
+			assert.notEqual data.toLowerCase().indexOf('registry domain id: d503300000040632620-lrms'), -1
 			done()
 
 	it 'should work with nic.tm', (done) ->
 		whois.lookup 'nic.tm', (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('domain reserved'), -1
+			assert.notEqual data.toLowerCase().indexOf('status : permanent/reserved'), -1
 			done()
 
 	it 'should work with srs.net.nz', (done) ->
