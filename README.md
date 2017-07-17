@@ -17,6 +17,7 @@ Node WHOIS is a WHOIS client for Node.js.
     Options:
       -s, --server   whois server                         [default: null]
       -f, --follow   number of times to follow redirects  [default: 0]
+      -p, --proxy    SOCKS proxy                          [default: null]
       -v, --verbose  show verbose results                 [default: false]
       -h, --help     display this help message            [default: false]
 
@@ -41,6 +42,11 @@ You may pass an object in between the address and the callback function to tweak
 	"follow":  2,    // number of times to follow redirects
 	"timeout": 0,    // socket timeout, excluding this doesn't override any default timeout value
 	"verbose": false // setting this to true returns an array of responses from all servers
+    "proxy": {       // (optional) SOCKS Proxy
+        "ipaddress": "",
+        "port": 0,
+        "type": 5    // or 4
+    }
 }
 ```
 

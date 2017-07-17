@@ -1,5 +1,6 @@
 _ = require 'underscore'
 net = require 'net'
+socks = require 'socks'
 punycode = require 'punycode'
 util = require 'util'
 
@@ -17,6 +18,7 @@ util = require 'util'
 	done = _.once done
 
 	server = options.server
+	proxy = options.proxy
 
 	if not server
 		switch true
@@ -45,57 +47,83 @@ util = require 'util'
 			host: parts[0]
 			port: parts[1]
 
+	if typeof proxy is 'string'
+		parts = proxy.split ':'
+		proxy =
+			ipaddress: parts[0]
+			port: parseInt parts[1]
+
 	_.defaults server,
 		port: 43
 		query: "$addr\r\n"
 
-	socket = net.connect server.port, server.host, =>
+	if proxy
+		_.defaults proxy,
+			type: 5
+
+
+	_lookup = (socket, done) =>
 		idn = addr
 		if server.punycode isnt false and options.punycode isnt false
 			idn = punycode.toASCII addr
 		socket.write server.query.replace '$addr', idn
-	socket.setEncoding 'utf-8'
-	if options.timeout?
-		socket.setTimeout options.timeout
 
-	data = ''
-	socket.on 'data', (chunk) =>
-		data += chunk
+		data = ''
+		socket.on 'data', (chunk) =>
+			data += chunk
 
-	socket.on 'timeout', =>
-		socket.destroy()
-		done new Error 'lookup: timeout'
+		socket.on 'timeout', =>
+			socket.destroy()
+			done new Error 'lookup: timeout'
 
-	socket.on 'error', (err) =>
-		done err
+		socket.on 'error', (err) =>
+			done err
 
-	socket.on 'close', (err) =>
-		if options.follow > 0
-			match = data.match /(ReferralServer|Registrar Whois|Whois Server|WHOIS Server):\s*(r?whois:\/\/)?(.*?)/
-			if match? and match[3] != server.host
-				options = _.extend {}, options,
-					follow: options.follow - 1
-					server: match[3]
-				@lookup addr, options, (err, parts) =>
-					if err?
-						return done err
+		socket.on 'close', (err) =>
+			if options.follow > 0
+				match = data.match /(ReferralServer|Registrar Whois|Whois Server|WHOIS Server):\s*(r?whois:\/\/)?(.*?)/
+				if match? and match[3] != server.host
+					options = _.extend {}, options,
+						follow: options.follow - 1
+						server: match[3]
+					@lookup addr, options, (err, parts) =>
+						if err?
+							return done err
 
-					if options.verbose
-						done null, [
-							server: server
-							data: data
-						].concat(parts)
-					else
-						done null, parts
-				return
+						if options.verbose
+							done null, [
+								server: server
+								data: data
+							].concat(parts)
+						else
+							done null, parts
+					return
 
-		if options.verbose
-			done null, [
-				server: server
-				data: data
-			]
-		else
-			done null, data
+			if options.verbose
+				done null, [
+					server: server
+					data: data
+				]
+			else
+				done null, data
+
+	if proxy
+		socks.createConnection
+			proxy: proxy
+			target:
+				host: server.host
+				port: server.port
+		, (err, socket, info) =>
+			if err?
+				return done err
+
+			_lookup socket, done
+
+			socket.resume()
+
+	else
+		socket = net.connect server.port, server.host
+		_lookup socket, done
 
 
 if module is require.main
@@ -107,6 +135,9 @@ if module is require.main
 	.default('f', 0)
 	.alias('f', 'follow')
 	.describe('f', 'number of times to follow redirects')
+	.default('p', null)
+	.alias('p', 'proxy')
+	.describe('p', 'SOCKS proxy')
 	.boolean('v')
 	.default('v', no)
 	.alias('v', 'verbose')
@@ -124,7 +155,7 @@ if module is require.main
 		console.log optimist.help()
 		process.exit 1
 
-	@lookup optimist.argv._[0], server: optimist.argv.server, follow: optimist.argv.follow, verbose: optimist.argv.verbose, (err, data) =>
+	@lookup optimist.argv._[0], server: optimist.argv.server, follow: optimist.argv.follow, proxy: optimist.argv.proxy, verbose: optimist.argv.verbose, (err, data) =>
 		if err?
 			console.log err
 			process.exit 1

@@ -24,11 +24,12 @@
   },
   "homepage": "https://github.com/hjr265/node-whois",
   "devDependencies": {
-    "coffee-script": "~1.6.3",
+    "coffee-script": "^1.6.3",
     "mocha": "~1.16.2"
   },
   "dependencies": {
     "optimist": "^0.6.1",
-    "underscore": "~1.5.2"
+    "socks": "^1.1.10",
+    "underscore": "^1.5.2"
   }
 }
