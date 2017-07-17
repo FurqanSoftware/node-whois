@@ -12,4 +12,4 @@ index.js: index.coffee
 		mv index.js.tmp index.js
 
 test: index.js test.coffee
-	mocha -u bdd -R spec -t 10000 -s 5000 --require coffee-script/register --compilers coffee:coffee-script test.coffee
+	mocha -u bdd -R spec -t 10000 -s 5000 --compilers coffee:coffee-script test.coffee
