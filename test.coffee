@@ -2,8 +2,6 @@ _ = require 'underscore'
 assert = require 'assert'
 whois = require './index'
 
-cs = require 'coffee-script/register'
-
 describe '#lookup()', ->
 	it 'should work with google.com', (done) ->
 		whois.lookup 'google.com', (err, data) ->
