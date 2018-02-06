@@ -14,11 +14,13 @@ util = require 'util'
 
 	_.defaults options,
 		follow: 2
+		timeout: 60000 # 60 seconds in ms
 
 	done = _.once done
 
 	server = options.server
 	proxy = options.proxy
+	timeout = options.timeout
 
 	if not server
 		switch true
@@ -113,6 +115,8 @@ util = require 'util'
 			target:
 				host: server.host
 				port: server.port
+			timeout:
+				timeout
 		, (err, socket, info) =>
 			if err?
 				return done err
@@ -123,6 +127,8 @@ util = require 'util'
 
 	else
 		socket = net.connect server.port, server.host
+		if timeout
+			socket.setTimeout timeout
 		_lookup socket, done
 
 
