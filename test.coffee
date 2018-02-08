@@ -2,7 +2,6 @@ _ = require 'underscore'
 assert = require 'assert'
 whois = require './index'
 
-
 describe '#lookup()', ->
 	it 'should work with google.com', (done) ->
 		whois.lookup 'google.com', (err, data) ->
@@ -109,4 +108,16 @@ describe '#lookup()', ->
 		whois.lookup 'registry.pro', (err, data) ->
 			assert.ifError err
 			assert.notEqual data.toLowerCase().indexOf('domain id: d107300000000006392-lrms'), -1
+			done()
+
+	it 'should fail with google.com due to timeout', (done) ->
+		whois.lookup 'google.com', {timeout: 1}, (err, data) ->
+			assert err
+			assert.equal 'lookup: timeout', err.message
+			done()
+
+	it 'should succeed with google.com with timeout', (done) ->
+		whois.lookup 'google.com', {timeout: 10000}, (err, data) ->
+			assert.ifError err
+			assert.notEqual data.toLowerCase().indexOf('domain name: google.com'), -1
 			done()
