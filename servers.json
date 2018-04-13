@@ -419,7 +419,7 @@
       "query": "--charset=utf-8 --show-handles $addr\r\n"
   },
   "dm": "whois.nic.dm",
-  "do": null,
+  "do": "whois.nic.do",
   "dz": "whois.nic.dz",
   "ec": "whois.nic.ec",
   "ee": "whois.tld.ee",
