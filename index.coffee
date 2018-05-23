@@ -126,7 +126,14 @@ util = require 'util'
 			socket.resume()
 
 	else
-		socket = net.connect server.port, server.host
+		sockOpts = 
+			host: server.host
+			port: server.port
+		
+		if options.bind
+			sockOpts.localAddress = options.bind
+
+		socket = net.connect sockOpts
 		if timeout
 			socket.setTimeout timeout
 		_lookup socket, done
@@ -148,6 +155,9 @@ if module is require.main
 	.default('v', no)
 	.alias('v', 'verbose')
 	.describe('v', 'show verbose results')
+	.default('b', null)
+	.alias('b', 'bind')
+	.describe('b', 'bind to a local IP address')
 	.boolean('h')
 	.default('h', no)
 	.alias('h', 'help')
@@ -161,7 +171,7 @@ if module is require.main
 		console.log optimist.help()
 		process.exit 1
 
-	@lookup optimist.argv._[0], server: optimist.argv.server, follow: optimist.argv.follow, proxy: optimist.argv.proxy, verbose: optimist.argv.verbose, (err, data) =>
+	@lookup optimist.argv._[0], server: optimist.argv.server, follow: optimist.argv.follow, proxy: optimist.argv.proxy, verbose: optimist.argv.verbose, bind: optimist.argv.bind, (err, data) =>
 		if err?
 			console.log err
 			process.exit 1
