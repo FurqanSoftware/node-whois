@@ -121,3 +121,9 @@ describe '#lookup()', ->
 			assert.ifError err
 			assert.notEqual data.toLowerCase().indexOf('domain name: google.com'), -1
 			done()
+
+	it 'should work with åre.no', (done) ->
+		whois.lookup 'åre.no', (err, data) ->
+			assert.ifError err
+			assert.notEqual data.toLowerCase().indexOf('åre.no'), -1
+			done()

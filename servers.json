@@ -530,7 +530,10 @@
   "ng": "whois.nic.net.ng",
   "ni": null,
   "nl": "whois.domain-registry.nl",
-  "no": "whois.norid.no",
+  "no": {
+    "host": "whois.norid.no",
+    "query": "-c utf-8 $addr\r\n"
+  },
   "np": null,
   "nr": null,
   "nu": "whois.iis.nu",
