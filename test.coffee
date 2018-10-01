@@ -18,7 +18,7 @@ describe '#lookup()', ->
 	it 'should work with 2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d', (done) ->
 		whois.lookup '2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d', (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('nethandle:      net6-2001-c00-1'), -1
+			assert.notEqual data.toLowerCase().indexOf('inet6num:       2001:db8::/32'), -1
 			done()
 
 	it 'should honor specified WHOIS server', (done) ->
@@ -46,7 +46,7 @@ describe '#lookup()', ->
 	it 'should follow specified number of redirects for IP address', (done) ->
 		whois.lookup '176.58.115.202', follow: 1, (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('nethandle:      net-176-0-0-0-0'), -1
+			assert.notEqual data.toLowerCase().indexOf('inetnum:        176.58.112.0 - 176.58.119.255'), -1
 			done()
 
 	it 'should work with nic.sh', (done) ->
