@@ -7,7 +7,7 @@
     "whois": "index.js"
   },
   "scripts": {
-    "prepublish": "make",
+    "prepare": "make",
     "test": "make test"
   },
   "repository": {

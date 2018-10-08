@@ -83,7 +83,7 @@ util = require 'util'
 
 		socket.on 'close', (err) =>
 			if options.follow > 0
-				match = data.replace(/\r/gm, '').match /(ReferralServer|Registrar Whois|Whois Server|WHOIS Server|Registrar WHOIS Server):[^\S\n]*(r?whois:\/\/)?(.*)/
+				match = data.replace(/\r/gm, '').match /(ReferralServer|Registrar Whois|Whois Server|WHOIS Server|Registrar WHOIS Server):[^\S\n]*((?:r?whois|https?):\/\/)?(.*)/
 				if match? and match[3] != server.host
 					options = _.extend {}, options,
 						follow: options.follow - 1
