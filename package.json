@@ -1,13 +1,13 @@
 {
   "name": "whois",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "description": "A WHOIS client for NodeJS",
   "main": "index.js",
   "bin": {
     "whois": "index.js"
   },
   "scripts": {
-    "prepublish": "make",
+    "prepare": "make",
     "test": "make test"
   },
   "repository": {
