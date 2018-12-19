@@ -18,7 +18,7 @@ util = require 'util'
 
 	done = _.once done
 
-	server = options.server
+	server = options.server and options.server.trim()
 	proxy = options.proxy
 	timeout = options.timeout
 
