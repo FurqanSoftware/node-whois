@@ -127,3 +127,9 @@ describe '#lookup()', ->
 			assert.ifError err
 			assert.notEqual data.toLowerCase().indexOf('åre.no'), -1
 			done()
+	
+	it 'should work with nic.digital', (done) ->
+		whois.lookup 'nic.digital', (err, data) ->
+			assert.ifError err
+			assert.notEqual data.toLowerCase().indexOf('nic.digital'), -1
+			done()
