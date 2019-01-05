@@ -119,7 +119,9 @@ util = require 'util'
 				timeout
 		, (err, socket, info) =>
 			if err?
-				return done err
+				return done err			
+			if timeout
+				socket.setTimeout timeout
 
 			_lookup socket, done
 
