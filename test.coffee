@@ -139,3 +139,9 @@ describe '#lookup()', ->
 			assert.ifError err
 			assert.notEqual data.toLowerCase().indexOf('whois.nic.ai'), -1
 			done()
+
+	it 'should work with currentzoology.org', (done) ->
+		whois.lookup 'currentzoology.org', (err, data) ->
+			assert.ifError err
+			assert.notEqual data.toLowerCase().indexOf('currentzoology.org'), -1
+			done()
