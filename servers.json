@@ -66,6 +66,7 @@
   "actor": "whois.nic.actor",
   "agency": "whois.nic.agency",
   "airforce": "whois.nic.airforce",
+  "app": "whois.nic.google",
   "archi": "whois.nic.archi",
   "associates": "whois.nic.associates",
   "audio": "whois.nic.audio",
