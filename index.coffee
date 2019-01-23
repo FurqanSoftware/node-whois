@@ -18,7 +18,7 @@ util = require 'util'
 
 	done = _.once done
 
-	server = options.server and options.server.trim()
+	server = options.server
 	proxy = options.proxy
 	timeout = options.timeout
 
@@ -87,14 +87,14 @@ util = require 'util'
 				if match? and match[3] != server.host
 					options = _.extend {}, options,
 						follow: options.follow - 1
-						server: match[3]
+						server: match[3].trim()
 					@lookup addr, options, (err, parts) =>
 						if err?
 							return done err
 
 						if options.verbose
 							done null, [
-								server: server
+								server: server.trim()
 								data: data
 							].concat(parts)
 						else
@@ -103,7 +103,7 @@ util = require 'util'
 
 			if options.verbose
 				done null, [
-					server: server
+					server: server.trim()
 					data: data
 				]
 			else
