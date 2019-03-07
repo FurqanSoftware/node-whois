@@ -94,7 +94,7 @@ util = require 'util'
 
 						if options.verbose
 							done null, [
-								server: server.trim()
+								server: ('object' === typeof server) ? server.host.trim() : server.trim()
 								data: data
 							].concat(parts)
 						else
@@ -103,7 +103,7 @@ util = require 'util'
 
 			if options.verbose
 				done null, [
-					server: server.trim()
+					server: ('object' === typeof server) ? server.host.trim() : server.trim()
 					data: data
 				]
 			else
