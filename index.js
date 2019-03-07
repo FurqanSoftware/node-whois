@@ -111,7 +111,7 @@
                 if (options.verbose) {
                   return done(null, [
                     {
-                      server: server.trim(),
+                      server: ('object' === typeof server) ? server.host.trim() : server.trim(),
                       data: data
                     }
                   ].concat(parts));
