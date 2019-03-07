@@ -7,8 +7,7 @@
     "whois": "index.js"
   },
   "scripts": {
-    "prepare": "make",
-    "test": "make test"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +23,6 @@
   },
   "homepage": "https://github.com/hjr265/node-whois",
   "devDependencies": {
-    "coffee-script": "^1.6.3",
     "mocha": "^5.2.0"
   },
   "dependencies": {
