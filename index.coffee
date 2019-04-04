@@ -1,6 +1,6 @@
 _ = require 'underscore'
 net = require 'net'
-socks = require 'socks'
+SocksClient = require('socks').SocksClient
 punycode = require 'punycode'
 util = require 'util'
 
@@ -112,14 +112,14 @@ util = require 'util'
 				done null, data
 
 	if proxy
-		socks.createConnection
+		SocksClient.createConnection
 			proxy: proxy
-			target:
+			destination:
 				host: server.host
 				port: server.port
-			timeout:
-				timeout
-		, (err, socket, info) =>
+			command: 'connect'
+			timeout: timeout
+		, (err, {socket}) =>
 			if err?
 				return done err			
 			if timeout
