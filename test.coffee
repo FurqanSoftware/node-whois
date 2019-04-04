@@ -145,3 +145,9 @@ describe '#lookup()', ->
 			assert.ifError err
 			assert.notEqual data.toLowerCase().indexOf('currentzoology.org'), -1
 			done()
+
+	it.only 'should work with 148.241.109.161', (done) ->
+		whois.lookup '148.241.109.161', {encoding: 'binary'}, (err, data) ->
+			assert.ifError err
+			assert.notEqual data.indexOf('Instituto Tecnológico'), -1
+			done()

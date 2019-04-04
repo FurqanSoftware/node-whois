@@ -68,6 +68,8 @@ util = require 'util'
 		idn = addr
 		if server.punycode isnt false and options.punycode isnt false
 			idn = punycode.toASCII addr
+		if options.encoding
+			socket.setEncoding options.encoding
 		socket.write server.query.replace '$addr', idn
 
 		data = ''
