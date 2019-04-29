@@ -49,6 +49,13 @@ describe '#lookup()', ->
 			assert.notEqual data.toLowerCase().indexOf('inetnum:        176.58.112.0 - 176.58.119.255'), -1
 			done()
 
+	it 'should work with verbose option', (done) ->
+		whois.lookup 'google.com', {verbose: true}, (err, data) ->
+			assert.ifError err
+			assert.equal data[0].server, 'whois.verisign-grs.com'
+			assert.notEqual data[0].data.toLowerCase().indexOf('domain name: google.com'), -1
+			done()
+
 	it 'should work with nic.sh', (done) ->
 		whois.lookup 'nic.sh', (err, data) ->
 			assert.ifError err

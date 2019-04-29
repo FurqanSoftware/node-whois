@@ -96,7 +96,7 @@ util = require 'util'
 
 						if options.verbose
 							done null, [
-								server: server.trim()
+								server: if ('object' == typeof server) then server.host.trim() else server.trim()
 								data: data
 							].concat(parts)
 						else
