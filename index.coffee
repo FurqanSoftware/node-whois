@@ -96,7 +96,7 @@ util = require 'util'
 
 						if options.verbose
 							done null, [
-								server: server.trim()
+								server: if ('object' == typeof server) then server.host.trim() else server.trim()
 								data: data
 							].concat(parts)
 						else
@@ -182,7 +182,10 @@ if module is require.main
 
 		if util.isArray data
 			for part in data
-				console.log part.server.host
+				if 'object' == typeof part.server
+					console.log part.server.host
+				else
+					console.log part.server
 				console.log part.data
 				console.log
 
