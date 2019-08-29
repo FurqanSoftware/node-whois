@@ -127,3 +127,9 @@ describe '#lookup()', ->
 			assert.ifError err
 			assert.notEqual data.toLowerCase().indexOf('åre.no'), -1
 			done()
+
+	it 'should work with dot.ai', (done) ->
+		whois.lookup 'dot.ai', (err, data) ->
+			assert.ifError err
+			assert.notEqual data.toLowerCase().indexOf('dot.ai'), -1
+			done()
