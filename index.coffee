@@ -7,6 +7,10 @@ util = require 'util'
 
 @SERVERS = require './servers.json'
 
+cleanParsingErrors = (string) =>
+	cleanPattern = /[:\s]+/gm
+	return string.replace(cleanPattern, '') || string
+
 @lookup = (addr, options, done) =>
 	if typeof done is 'undefined' and typeof options is 'function'
 		done = options
@@ -90,6 +94,8 @@ util = require 'util'
 					options = _.extend {}, options,
 						follow: options.follow - 1
 						server: match[3].trim()
+
+					options.server = cleanParsingErrors(options.server)
 
 					@lookup addr, options, (err, parts) =>
 						if err?
