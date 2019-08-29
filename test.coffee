@@ -49,6 +49,13 @@ describe '#lookup()', ->
 			assert.notEqual data.toLowerCase().indexOf('inetnum:        176.58.112.0 - 176.58.119.255'), -1
 			done()
 
+	it 'should work with verbose option', (done) ->
+		whois.lookup 'google.com', {verbose: true}, (err, data) ->
+			assert.ifError err
+			assert.equal data[0].server, 'whois.verisign-grs.com'
+			assert.notEqual data[0].data.toLowerCase().indexOf('domain name: google.com'), -1
+			done()
+
 	it 'should work with nic.sh', (done) ->
 		whois.lookup 'nic.sh', (err, data) ->
 			assert.ifError err
@@ -126,6 +133,30 @@ describe '#lookup()', ->
 		whois.lookup 'åre.no', (err, data) ->
 			assert.ifError err
 			assert.notEqual data.toLowerCase().indexOf('åre.no'), -1
+			done()
+
+	it 'should work with nic.digital', (done) ->
+		whois.lookup 'nic.digital', (err, data) ->
+			assert.ifError err
+			assert.notEqual data.toLowerCase().indexOf('nic.digital'), -1
+			done()
+
+	it 'should work with whois.nic.ai', (done) ->
+		whois.lookup 'whois.nic.ai', (err, data) ->
+			assert.ifError err
+			assert.notEqual data.toLowerCase().indexOf('whois.nic.ai'), -1
+			done()
+
+	it 'should work with currentzoology.org', (done) ->
+		whois.lookup 'currentzoology.org', (err, data) ->
+			assert.ifError err
+			assert.notEqual data.toLowerCase().indexOf('currentzoology.org'), -1
+			done()
+
+	it 'should work with 148.241.109.161', (done) ->
+		whois.lookup '148.241.109.161', {encoding: 'binary'}, (err, data) ->
+			assert.ifError err
+			assert.notEqual data.indexOf('Instituto Tecnológico'), -1
 			done()
 
 	it 'should work with dot.ai', (done) ->

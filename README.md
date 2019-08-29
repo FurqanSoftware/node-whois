@@ -45,7 +45,7 @@ You may pass an object in between the address and the callback function to tweak
 	"verbose": false // setting this to true returns an array of responses from all servers
 	"bind": null     // bind the socket to a local IP address
 	"proxy": {       // (optional) SOCKS Proxy
-		"ipaddress": "",
+		"host": "",
 		"port": 0,
 		"type": 5    // or 4
 	}
