@@ -7,6 +7,10 @@ util = require 'util'
 
 @SERVERS = require './servers.json'
 
+cleanParsingErrors = (string) =>
+	cleanPattern = /[:\s]+/gm
+	return string.replace(cleanPattern, '') || string
+
 @lookup = (addr, options, done) =>
 	if typeof done is 'undefined' and typeof options is 'function'
 		done = options
@@ -90,6 +94,9 @@ util = require 'util'
 					options = _.extend {}, options,
 						follow: options.follow - 1
 						server: match[3].trim()
+
+					options.server = cleanParsingErrors(options.server)
+
 					@lookup addr, options, (err, parts) =>
 						if err?
 							return done err
@@ -121,7 +128,7 @@ util = require 'util'
 			timeout: timeout
 		, (err, {socket}) =>
 			if err?
-				return done err			
+				return done err
 			if timeout
 				socket.setTimeout timeout
 
@@ -130,10 +137,10 @@ util = require 'util'
 			socket.resume()
 
 	else
-		sockOpts = 
+		sockOpts =
 			host: server.host
 			port: server.port
-		
+
 		if options.bind
 			sockOpts.localAddress = options.bind
 

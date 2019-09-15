@@ -134,13 +134,13 @@ describe '#lookup()', ->
 			assert.ifError err
 			assert.notEqual data.toLowerCase().indexOf('åre.no'), -1
 			done()
-	
+
 	it 'should work with nic.digital', (done) ->
 		whois.lookup 'nic.digital', (err, data) ->
 			assert.ifError err
 			assert.notEqual data.toLowerCase().indexOf('nic.digital'), -1
 			done()
-	
+
 	it 'should work with whois.nic.ai', (done) ->
 		whois.lookup 'whois.nic.ai', (err, data) ->
 			assert.ifError err
@@ -157,4 +157,10 @@ describe '#lookup()', ->
 		whois.lookup '148.241.109.161', {encoding: 'binary'}, (err, data) ->
 			assert.ifError err
 			assert.notEqual data.indexOf('Instituto Tecnológico'), -1
+			done()
+
+	it 'should work with dot.ai', (done) ->
+		whois.lookup 'dot.ai', (err, data) ->
+			assert.ifError err
+			assert.notEqual data.toLowerCase().indexOf('dot.ai'), -1
 			done()
