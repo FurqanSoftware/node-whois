@@ -78,7 +78,10 @@ util = require 'util'
 					server: match[3]
 				@lookup addr, options, (err, parts) =>
 					if err?
-						return done err
+						if data == ''
+							return done err
+						else
+							parts = data
 
 					if options.verbose
 						done null, [
