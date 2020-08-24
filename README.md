@@ -15,12 +15,13 @@ Node WHOIS is a WHOIS client for Node.js.
     whois [options] address
 
     Options:
-      -s, --server   whois server                         [default: null]
-      -f, --follow   number of times to follow redirects  [default: 0]
-      -p, --proxy    SOCKS proxy                          [default: null]
-      -v, --verbose  show verbose results                 [default: false]
-      -b, --bind     bind to a local IP address           [default: null]
-      -h, --help     display this help message            [default: false]
+      --version      Show version number                                   [boolean]
+      -s, --server   whois server                                    [default: null]
+      -f, --follow   number of times to follow redirects                [default: 0]
+      -p, --proxy    SOCKS proxy                                     [default: null]
+      -v, --verbose  show verbose results                 [boolean] [default: false]
+      -b, --bind     bind to a local IP address                      [default: null]
+      -h, --help     Show help                            [boolean] [default: false]
 
 ### Local
 

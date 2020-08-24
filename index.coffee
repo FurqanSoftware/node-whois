@@ -150,7 +150,7 @@ cleanParsingErrors = (string) =>
 
 
 if module is require.main
-	optimist = require('optimist')
+	yargs = require('yargs')
 	.usage('$0 [options] address')
 	.default('s', null)
 	.alias('s', 'server')
@@ -173,15 +173,15 @@ if module is require.main
 	.alias('h', 'help')
 	.describe('h', 'display this help message')
 
-	if optimist.argv.h
-		console.log optimist.help()
+	if yargs.argv.h
+		yargs.showHelp()
 		process.exit 0
 
-	if not optimist.argv._[0]?
-		console.log optimist.help()
+	if not yargs.argv._[0]?
+		yargs.showHelp()
 		process.exit 1
 
-	@lookup optimist.argv._[0], server: optimist.argv.server, follow: optimist.argv.follow, proxy: optimist.argv.proxy, verbose: optimist.argv.verbose, bind: optimist.argv.bind, (err, data) =>
+	@lookup yargs.argv._[0], server: yargs.argv.server, follow: yargs.argv.follow, proxy: yargs.argv.proxy, verbose: yargs.argv.verbose, bind: yargs.argv.bind, (err, data) =>
 		if err?
 			console.log err
 			process.exit 1
