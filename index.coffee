@@ -117,6 +117,9 @@ cleanParsingErrors = (string) =>
 			else
 				done null, data
 
+	if !Number.isInteger(server.port)
+		server.port = 43
+
 	if proxy
 		SocksClient.createConnection
 			proxy: proxy
