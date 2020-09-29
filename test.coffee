@@ -164,3 +164,9 @@ describe '#lookup()', ->
 			assert.ifError err
 			assert.notEqual data.toLowerCase().indexOf('dot.ai'), -1
 			done()
+
+  it 'should avoid socket BAD_PORT Error and fail with a catchable ECONNRESET with whois.yesnic.com (eigene.io)', (done) ->
+    whois.lookup 'eigene.io', (err, data) ->
+      assert err
+      assert.notEqual err.toString().indexOf('ECONNRESET'), -1
+      done()
