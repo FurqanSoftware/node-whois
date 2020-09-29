@@ -1,6 +1,6 @@
 {
   "name": "whois",
-  "version": "2.10.1",
+  "version": "2.13.1",
   "description": "A WHOIS client for NodeJS",
   "main": "index.js",
   "bin": {
@@ -25,11 +25,11 @@
   "homepage": "https://github.com/hjr265/node-whois",
   "devDependencies": {
     "coffee-script": "^1.6.3",
-    "mocha": "^5.2.0"
+    "mocha": "^8.1.1"
   },
   "dependencies": {
-    "optimist": "^0.6.1",
     "socks": "^2.2.2",
-    "underscore": "^1.9.1"
+    "underscore": "^1.9.1",
+    "yargs": "^15.4.1"
   }
 }
