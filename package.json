@@ -7,6 +7,7 @@
     "whois": "index.js"
   },
   "scripts": {
+    "rebuild": "rm -f ./package-lock.json ; rm -rf ./node_modules ; npm i",
     "prepare": "make",
     "test": "make test"
   },
@@ -24,7 +25,6 @@
   },
   "homepage": "https://github.com/hjr265/node-whois",
   "devDependencies": {
-    "coffee-script": "^1.6.3",
     "coffeescript": "^2.5.1",
     "mocha": "^8.1.1"
   },
