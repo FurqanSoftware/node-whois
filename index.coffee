@@ -8,7 +8,7 @@ util = require 'util'
 @SERVERS = require './servers.json'
 
 cleanParsingErrors = (string) =>
-	return string.replace(/^[:\s]+/, '') || string
+	return string.replace(/^[:\s]+/, '').replace(/^https?[:\/]+/, '') || string
 
 @lookup = (addr, options, done) =>
 	if typeof done is 'undefined' and typeof options is 'function'
@@ -116,6 +116,9 @@ cleanParsingErrors = (string) =>
 				]
 			else
 				done null, data
+
+	if !Number.isInteger(server.port)
+		server.port = 43
 
 	if proxy
 		SocksClient.createConnection
