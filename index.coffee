@@ -15,7 +15,7 @@ cleanParsingErrors = (string) =>
 		done = options
 		options = {}
 		
-        if addr == '__proto__'
+      if addr == '__proto__'
               done new Error 'lookup: __proto__ is not allowed to lookup'
 		return
 
