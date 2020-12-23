@@ -14,6 +14,10 @@ cleanParsingErrors = (string) =>
 	if typeof done is 'undefined' and typeof options is 'function'
 		done = options
 		options = {}
+		
+        if addr == '__proto__'
+                done new Error 'lookup: __proto__ is not allowed to lookup'
+		return
 
 	_.defaults options,
 		follow: 2
