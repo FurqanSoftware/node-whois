@@ -4,7 +4,7 @@
   "description": "A WHOIS client for NodeJS",
   "main": "index.js",
   "bin": {
-    "whois": "index.js"
+    "whois": "bin.js"
   },
   "scripts": {
     "rebuild": "rm -f ./package-lock.json ; rm -rf ./node_modules ; npm i",
