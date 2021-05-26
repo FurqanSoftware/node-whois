@@ -1,6 +1,6 @@
 # Node WHOIS
 
-[![Build Status](https://drone.io/github.com/hjr265/node-whois/status.png)](https://drone.io/github.com/hjr265/node-whois/latest)
+[![Build Status](https://drone.io/github.com/FurqanSoftware/node-whois/status.png)](https://drone.io/github.com/FurqanSoftware/node-whois/latest)
 
 Node WHOIS is a WHOIS client for Node.js.
 
