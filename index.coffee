@@ -128,9 +128,10 @@ cleanParsingErrors = (string) =>
 				port: server.port
 			command: 'connect'
 			timeout: timeout
-		, (err, {socket}) =>
+		, (err, info) =>
 			if err?
 				return done err
+			{socket} = info
 			if timeout
 				socket.setTimeout timeout
 
