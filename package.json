@@ -26,7 +26,7 @@
   "homepage": "https://github.com/hjr265/node-whois",
   "devDependencies": {
     "coffeescript": "^2.5.1",
-    "mocha": "^8.1.1"
+    "mocha": "^8.4.0"
   },
   "dependencies": {
     "socks": "^2.2.2",
