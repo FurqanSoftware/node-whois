@@ -172,3 +172,10 @@ describe '#lookup()', ->
 			else if err
 				assert.notEqual err.toString().indexOf('ECONNRESET'), -1
 			done()
+
+	it 'should work with gen.xyz', (done) ->
+		whois.lookup 'gen.xyz', (err, data) ->
+			assert.ifError err
+			console.log data
+			assert.equal data.toLowerCase().indexOf('not found'), -1
+			done()
