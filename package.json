@@ -6,11 +6,7 @@
   "bin": {
     "whois": "bin.js"
   },
-  "scripts": {
-    "rebuild": "rm -f ./package-lock.json ; rm -rf ./node_modules ; npm i",
-    "prepare": "make",
-    "test": "make test"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/hjr265/node-whois"
