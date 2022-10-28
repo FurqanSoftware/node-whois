@@ -60,3 +60,9 @@ Contributions are welcome.
 ## License
 
 Node WHOIS is available under the [BSD (2-Clause) License](http://opensource.org/licenses/BSD-2-Clause).
+
+## Other Projects Using Node WHOIS
+
+- [Dots](https://github.com/FurqanSoftware/dots): Tiny networking toolkit. Uses Node WHOIS to perform WHOIS lookups for domains and IPs.
+
+If you are using Node WHOIS in a project please send a pull request to add it to the list.
