@@ -52,26 +52,26 @@ describe '#lookup()', ->
 	it 'should work with verbose option', (done) ->
 		whois.lookup 'google.com', {verbose: true}, (err, data) ->
 			assert.ifError err
-			assert.equal data[0].server, 'whois.verisign-grs.com'
+			assert.equal (data[0].server == 'whois.verisign-grs.com') or (data[0].server == 'whois.markmonitor.com'), 1
 			assert.notEqual data[0].data.toLowerCase().indexOf('domain name: google.com'), -1
 			done()
 
 	it 'should work with nic.sh', (done) ->
 		whois.lookup 'nic.sh', (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('registry domain id: d503300000040403495-lrms'), -1
+			assert.notEqual data.toLowerCase().indexOf('registry domain id: dede5cd207a640ae8285d181431a00c4-donuts'), -1
 			done()
 
 	it 'should work with nic.io', (done) ->
 		whois.lookup 'nic.io', (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('registry domain id: d503300000040453277-lrms'), -1
+			assert.notEqual data.toLowerCase().indexOf('registry domain id: 09b2461d0b6449ffbc9edb53bc7326c1-donuts'), -1
 			done()
 
 	it 'should work with nic.ac', (done) ->
 		whois.lookup 'nic.ac', (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('registry domain id: d503300000040632620-lrms'), -1
+			assert.notEqual data.toLowerCase().indexOf('registry domain id: bcb94de2bd4e43459a9ef5e67e2e02d3-donuts'), -1
 			done()
 
 	it 'should work with nic.tm', (done) ->
@@ -83,13 +83,13 @@ describe '#lookup()', ->
 	it 'should work with nic.global', (done) ->
 		whois.lookup 'nic.global', (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('registry domain id: d2836144-agrs'), -1
+			assert.notEqual data.toLowerCase().indexOf('registry domain id: 696c235291444e9ab8c0f1336238c349-donuts'), -1
 			done()
 
 	it 'should work with srs.net.nz', (done) ->
 		whois.lookup 'srs.net.nz', (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('domain_name: srs.net.nz'), -1
+			assert.notEqual data.toLowerCase().indexOf('domain name: srs.net.nz'), -1
 			done()
 
 	it 'should work with redundant follow', (done) ->
@@ -112,9 +112,9 @@ describe '#lookup()', ->
 			done()
 
 	it 'should work with registry.pro', (done) ->
-		whois.lookup 'registry.pro', (err, data) ->
+		whois.lookup 'registry.pro', follow: 0, (err, data) ->
 			assert.ifError err
-			assert.notEqual data.toLowerCase().indexOf('domain id: d107300000000006392-lrms'), -1
+			assert.notEqual data.toLowerCase().indexOf('domain id: a78bed915c9748fdbdf91224299d2058-donuts'), -1
 			done()
 
 	it 'should fail with google.com due to timeout', (done) ->
@@ -156,7 +156,7 @@ describe '#lookup()', ->
 	it 'should work with 148.241.109.161', (done) ->
 		whois.lookup '148.241.109.161', {encoding: 'binary'}, (err, data) ->
 			assert.ifError err
-			assert.notEqual data.indexOf('Instituto Tecnológico'), -1
+			assert.notEqual data.indexOf('MX-ITYE8-LACNIC'), -1
 			done()
 
 	it 'should work with dot.ai', (done) ->
