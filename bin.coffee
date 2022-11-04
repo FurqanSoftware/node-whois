@@ -1,5 +1,6 @@
 yargs = require 'yargs'
 whois = require './index'
+util = require 'util'
 
 yargs.usage('$0 [options] address')
 .default('s', null)
@@ -31,7 +32,7 @@ if not yargs.argv._[0]?
     yargs.showHelp()
     process.exit 1
 
-@lookup yargs.argv._[0], server: yargs.argv.server, follow: yargs.argv.follow, proxy: yargs.argv.proxy, verbose: yargs.argv.verbose, bind: yargs.argv.bind, (err, data) =>
+whois.lookup yargs.argv._[0], server: yargs.argv.server, follow: yargs.argv.follow, proxy: yargs.argv.proxy, verbose: yargs.argv.verbose, bind: yargs.argv.bind, (err, data) =>
     if err?
         console.log err
         process.exit 1

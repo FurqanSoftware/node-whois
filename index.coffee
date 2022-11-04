@@ -92,7 +92,7 @@ cleanParsingErrors = (string) =>
 
 		socket.on 'close', (err) =>
 			if options.follow > 0
-				match = data.replace(/\r/gm, '').match /(ReferralServer|Registrar Whois|Whois Server|WHOIS Server|Registrar WHOIS Server):[^\S\n]*((?:r?whois|https?):\/\/)?(.*)/
+				match = data.replace(/\r/gm, '').match /(ReferralServer|Registrar Whois|Whois Server|WHOIS Server|Registrar WHOIS Server|refer):[^\S\n]*((?:r?whois|https?):\/\/)?([0-9A-Za-z\.\-_]*)/
 				if match? and match[3] != server.host
 					options = _.extend {}, options,
 						follow: options.follow - 1
