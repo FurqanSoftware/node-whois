@@ -2,6 +2,7 @@ _ = require 'underscore'
 net = require 'net'
 SocksClient = require('socks').SocksClient
 url = require 'url'
+punycode = require 'punycode/'
 util = require 'util'
 
 
@@ -102,6 +103,12 @@ cleanParsingErrors = (string) =>
 
 					@lookup addr, options, (err, parts) =>
 						if err?
+							if options.verbose
+								return done err, [
+									server: if ('object' == typeof server) then server.host.trim() else server.trim()
+									data: data
+								]
+
 							return done err
 
 						if options.verbose
