@@ -9,6 +9,9 @@ yargs.usage('$0 [options] address')
 .default('f', 0)
 .alias('f', 'follow')
 .describe('f', 'number of times to follow redirects')
+.default('t', 60000)
+.alias('t', 'timeout')
+.describe('t', 'socket timeout')
 .default('p', null)
 .alias('p', 'proxy')
 .describe('p', 'SOCKS proxy')
@@ -32,7 +35,7 @@ if not yargs.argv._[0]?
     yargs.showHelp()
     process.exit 1
 
-whois.lookup yargs.argv._[0], server: yargs.argv.server, follow: yargs.argv.follow, proxy: yargs.argv.proxy, verbose: yargs.argv.verbose, bind: yargs.argv.bind, (err, data) =>
+whois.lookup yargs.argv._[0], server: yargs.argv.server, follow: yargs.argv.follow, timeout: yargs.argv.timeout, proxy: yargs.argv.proxy, verbose: yargs.argv.verbose, bind: yargs.argv.bind, (err, data) =>
     if err?
         console.log err
         process.exit 1
