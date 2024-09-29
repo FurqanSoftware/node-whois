@@ -52,7 +52,7 @@
   "coop": "whois.nic.coop",
   "info": "whois.afilias.net",
   "jobs": "jobswhois.verisign-grs.com",
-  "mobi": "whois.dotmobiregistry.net",
+  "mobi": "whois.nic.mobi",
   "museum": "whois.museum",
   "name": "whois.nic.name",
   "post": "whois.dotpostregistry.net",
@@ -282,7 +282,7 @@
   "motorcycles": "whois.nic.motorcycles",
   "movie": "whois.nic.movie",
   "nagoya": "whois.nic.nagoya",
-  "navy": "whois.nic.navy",  
+  "navy": "whois.nic.navy",
   "network": "whois.nic.network",
   "neustar": "whois.nic.neustar",
   "news": "whois.nic.news",
@@ -510,14 +510,14 @@
   "cy": null,
   "cz": "whois.nic.cz",
   "de": {
-      "host": "whois.denic.de",
-      "query": "-T dn $addr\r\n",
-      "punycode": false
+    "host": "whois.denic.de",
+    "query": "-T dn $addr\r\n",
+    "punycode": false
   },
   "dj": null,
   "dk": {
-      "host": "whois.dk-hostmaster.dk",
-      "query": "--charset=utf-8 --show-handles $addr\r\n"
+    "host": "whois.dk-hostmaster.dk",
+    "query": "--charset=utf-8 --show-handles $addr\r\n"
   },
   "dm": "whois.nic.dm",
   "do": "whois.nic.do",
@@ -575,8 +575,8 @@
   "jm": null,
   "jo": null,
   "jp": {
-      "host": "whois.jprs.jp",
-      "query": "$addr/e\r\n"
+    "host": "whois.jprs.jp",
+    "query": "$addr/e\r\n"
   },
   "ke": "whois.kenic.or.ke",
   "kg": "whois.domain.kg",
