@@ -38,7 +38,8 @@ cleanParsingErrors = (string) =>
 
 			when net.isIP(addr) isnt 0
 				server = @SERVERS['_']['ip']
-
+				server.punycode = false
+				options.punycode = false
 			else
 				tld = url.domainToASCII(addr)
 				while true
