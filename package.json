@@ -2,14 +2,12 @@
   "name": "whois",
   "version": "2.15.0",
   "description": "A WHOIS client for NodeJS",
-  "main": "index.js",
+  "main": "whois.js",
   "bin": {
     "whois": "bin.js"
   },
   "scripts": {
-    "rebuild": "rm -f ./package-lock.json ; rm -rf ./node_modules ; npm i",
-    "prepare": "make",
-    "test": "make test"
+    "test": "mocha -u bdd -R spec -t 10000 -s 5000 test.js"
   },
   "repository": {
     "type": "git",
@@ -29,7 +27,6 @@
     "mocha": "^11.1.0"
   },
   "dependencies": {
-    "punycode": "^2.3.1",
     "socks": "^2.2.2",
     "underscore": "^1.9.1",
     "yargs": "^15.4.1"
