@@ -21,13 +21,13 @@ declare module "whois" {
 
   type WhoisCallback = (
     err: Error | null,
-    data: string | WhoisResult[]
+    data: string | WhoisResult[],
   ) => void;
 
   function lookup(addr: string, callback: WhoisCallback): void;
   function lookup(
     addr: string,
     options: WhoisOptions,
-    callback: WhoisCallback
+    callback: WhoisCallback,
   ): void;
 }
