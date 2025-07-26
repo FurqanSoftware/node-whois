@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import yargs from "yargs";
-import { lookup } from "./whois.js";
+import { lookup } from "./index.js";
 
 yargs
   .usage("$0 [options] address")

@@ -1,5 +1,5 @@
 import assert from "assert";
-import { lookup } from "./whois.js";
+import { lookup } from "./index.js";
 
 describe("#lookup()", () => {
   it("should work with google.com", (done) => {
