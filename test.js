@@ -1,5 +1,5 @@
 import assert from "assert";
-import { lookup } from "./index.js";
+import { lookup, exportedForTesting } from "./index.js";
 
 describe("#lookup()", () => {
   it("should work with google.com", (done) => {
@@ -304,5 +304,26 @@ describe("#lookup()", () => {
       assert.equal(data.toLowerCase().indexOf("not found"), -1);
       done();
     });
+  });
+});
+
+describe("#extractReferralServer()", () => {
+  it("should parse host", (done) => {
+    const server = exportedForTesting.extractReferralServer(
+      "Registrar WHOIS Server: whois.whois.co.kr",
+      {},
+    );
+    assert.equal(server.host, "whois.whois.co.kr");
+    done();
+  });
+
+  it("should parse host and port", (done) => {
+    const server = exportedForTesting.extractReferralServer(
+      "ReferralServer:  rwhois://rwhois.psychz.net:4321",
+      {},
+    );
+    assert.equal(server.host, "rwhois.psychz.net");
+    assert.equal(server.port, 4321);
+    done();
   });
 });

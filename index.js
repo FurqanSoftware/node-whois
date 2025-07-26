@@ -159,13 +159,13 @@ const extractReferralServer = (data, currentServer) => {
   const match = data
     .replace(/\r/gm, "")
     .match(
-      /(ReferralServer|Registrar Whois|Whois Server|WHOIS Server|Registrar WHOIS Server|refer):[^\S\n]*((?:r?whois|https?):\/\/)?([0-9A-Za-z\.\-_]*)/,
+      /(ReferralServer|Registrar Whois|Whois Server|WHOIS Server|Registrar WHOIS Server|refer):[^\S\n]*((?:r?whois|https?):\/\/)?([0-9A-Za-z\.\-_]*(:\d+)?)/,
     );
   if (!match) return null;
   const value = (match[3] || "")
     .replace(/^[:\s]+/, "")
     .replace(/^https?[:\/]+/, "");
-  if (value === currentServer.host) return null;
+  if (value === currentServer?.host) return null;
   return parseServer(value);
 };
 
@@ -202,4 +202,8 @@ const makeSocket = (server, proxy, options, done) => {
   const socket = net.connect(sockOpts);
   if (options.timeout) socket.setTimeout(options.timeout);
   done(null, socket);
+};
+
+export const exportedForTesting = {
+  extractReferralServer,
 };
